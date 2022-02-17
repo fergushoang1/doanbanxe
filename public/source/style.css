@@ -1,0 +1,89 @@
+.cart-item-delete {
+    float: right;
+    margin-right: 10px;
+}
+
+.cart-item-delete i {
+    color: #888888;
+}
+
+.quantity {
+    text-align: center;
+}
+
+.name {
+    margin-left: 10px;
+}
+
+.center .btn-oder {
+    width: 45%;
+    height: auto;
+    background-color: #9d0202;
+    color: #FFFFFF;
+    text-align: center;
+    border-radius: 3px;
+    box-shadow: 5px 5px 18px #888888;
+}
+
+.btn-oder a {
+    color: #FFFFFF;
+    font-size: 1.3rem;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.btn-oder a:hover {
+    color: #ffff;
+    text-decoration: none;
+}
+
+
+/* Header */
+
+.cart-body {
+    cursor: auto;
+}
+
+.btn-cart {
+    min-width: 200px;
+    /* font-size: 1.5rem; */
+    border: 1px solid #c6c6c6;
+    border-radius: 3px;
+    text-align: center;
+    box-shadow: 5px 5px 18px #888888;
+    cursor: pointer;
+}
+
+.cart-scroll {
+    max-height: 500px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.cart-caption {
+    width: auto;
+    height: 120px;
+    position: sticky;
+    background-color: #f3f3f3;
+}
+
+.cart-item {
+    height: 80px;
+}
+
+.h-70 {
+    height: 70px;
+}
+
+.h-40 {
+    height: 40px;
+}
+
+input:focus:invalid {
+    box-shadow: 0 0 5px #d45252;
+    border-color: #b03535;
+}
+
+.drop_hide {
+    display: none;
+}
