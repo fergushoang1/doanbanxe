@@ -109,6 +109,7 @@ body {
   background: #fff;
   border-radius: 1px;
   box-shadow: 0 0 1in -0.25in rgba(0, 0, 0, 0.5);
+ 
 }
 
 /* header */
@@ -171,7 +172,7 @@ article,
 article address,
 table.meta,
 table.inventory {
-  margin: 0 0 3em;
+  margin: 0 0 6em;
 }
 article:after {
   clear: both;
@@ -349,6 +350,7 @@ tr:hover .cut {
   <link rel="stylesheet" href="style.css">
   <link rel="license" href="https://www.opensource.org/licenses/mit-license/">
   <script src="script.js"></script>
+
 </head>
 
 <body>
@@ -356,10 +358,8 @@ tr:hover .cut {
     <h1>Chi tiết đơn hàng</h1>
     <address contenteditable>
     	
-      <p>{{ $name}}</p>
-      <p>{{ $address}}</p>
-      <p>{{ $phone}}</p>
-      <p>{{ $email}}</p>
+      <p></p>
+      
       
       
     </address>
@@ -372,16 +372,28 @@ tr:hover .cut {
     </address>
     <table class="meta">
       <tr>
-        <th><span contenteditable>Mã đơn hàng</span></th>
-        <td><span contenteditable></span></td>
+        <th><span contenteditable>Mã Đơn Hàng</span></th>
+        <td><span contenteditable>{{ $bills->id}}</span></td>
+      </tr>
+      <tr>
+        <th><span contenteditable>Tên Khách Hàng</span></th>
+        <td><span contenteditable>{{ $bills->name}}</span></td>
+      </tr>
+      <tr>
+        <th><span contenteditable>Số Điện Thoại</span></th>
+        <td><span contenteditable>{{$bills->phone}}</span></td>
       </tr>
       <tr>
         <th><span contenteditable>Ngày đặt hàng</span></th>
-        <td><span contenteditable></span></td>
+        <td><span contenteditable>{{$bills->created_at}}</span></td>
       </tr>
       <tr>
         <th><span contenteditable>Ngày nhận xe</span></th>
-        <td><span id="prefix" contenteditable>{{$ngaynhanxe}}</span></td>
+        <td><span id="prefix" contenteditable>{{$bills->ngaynhanxe}}</span></td>
+      </tr>
+      <tr>
+        <th><span contenteditable>Hình Thức Thanh Toán</span></th>
+        <td><span id="prefix" contenteditable>{{$bills->ngaynhanxe}}</span></td>
       </tr>
     </table>
     <table class="inventory">
@@ -391,16 +403,16 @@ tr:hover .cut {
           <th><span contenteditable>Giá</span></th>
           <th><span contenteditable>Số lượng</span></th>
           <th><span contenteditable>Ghi chú</span></th>
-          <th><span contenteditable>Tổng</span></th>
+          <th><span contenteditable>Giá</span></th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td><a class="cut">-</a><span contenteditable>{{ $tenxe}}</span></td>         
-          <td><span data-prefix></span><span contenteditable>{{ $unit_price}}</span><span>VNĐ</span></td>
-          <td><span contenteditable>{{ $quantity}}</span></td>
-          <td><span contenteditable>{{ $note}}</span></td>
-          <td><span data-prefix>{{ $total}}</span><span>VNĐ</span></td>
+          <td><a class="cut">-</a><span contenteditable>{{ $bills->tenxe}}</span></td>         
+          <td><span data-prefix></span><span contenteditable>{{ $bills->unit_price}}</span><span>VNĐ</span></td>
+          <td><span contenteditable>{{ $bills->quantity}}</span></td>
+          <td><span contenteditable>{{ $bills->note}}</span></td>
+          <td><span data-prefix>{{ $bills->total}}</span><span>VNĐ</span></td>
         </tr>
       </tbody>
     </table>
@@ -408,14 +420,14 @@ tr:hover .cut {
     <table class="balance">
       <tr>
         <th><span contenteditable>Tổng cộng</span></th>
-        <td><span>{{ $total}}</span><span>VNĐ</span></td>
+        <td><span>{{ $bills->total}}</span><span>VNĐ</span></td>
       </tr>     
     </table>
   </article>
   <aside>
     <h1><span contenteditable>NGUYÊN HOÀNG RACING</span></h1>
     <div contenteditable>
-      <p>A finance charge of 1.5% will be made on unpaid balances after 30 days.</p>
+      {{-- <p>A finance charge of 1.5% will be made on unpaid balances after 30 days.</p> --}}
     </div>
   </aside>
 </body>

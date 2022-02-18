@@ -136,11 +136,11 @@
                 <div class="block2">
                     <ul class="list2">
                         <li class="big">Công ty Racing Việt Nam</li>
-                        <li class="normal">Số GCNĐKDN: 2500150543</li>
+                        <li class="normal">Số GCNĐKDN: 49573692</li>
                         <li class="normal">Đăng ký lần đầu: Ngày 26/6/2008</li>
                         <li class="normal">Đăng ký thay đổi lần thứ 11: Ngày 1/4/2021.</li>
-                        <li class="normal">Cơ quan cấp: Phòng Đăng ký kinh doanh – Sở Kế hoạch và Đầu tư Vĩnh Phúc</li>
-                        <li class="normal">Địa chỉ: Phường Phúc Thắng, Thành Phố Phúc Yên, <br class="mobile" />Tỉnh Vĩnh Phúc, Việt Nam</li>
+                        <li class="normal">Cơ quan cấp: Phòng Đăng ký kinh doanh – Sở Kế hoạch và Đầu tư TP Đà Nẵng</li>
+                        <li class="normal">Địa chỉ: 62 Cồn Dầu 1, Hòa Xuân, Cẩm Lệ <br class="mobile" />TP Đà Nẵng, Việt Nam</li>
                         <li class="normal">
                             <a href="">
                                 <img src="https://www.honda.com.vn/images/logoSaleNoti.png" style="width: 150px">
@@ -177,12 +177,12 @@
                         <li class="normal">Hotline: <b class="b-hotline">1800 8001</b> (Miễn phí cho tất cả thuê
                             bao)
                         </li>
-                        <li class="normal">Email: <a href="mailto:cr@honda.com.vn" class="a-mailto">rc@Racing.com.vn</a>
+                        <li class="normal">Email: <a href="" class="a-mailto">rc@Racing.com.vn</a>
                         </li>
                     </ul>
                 </div>
                 <div class="block3 bottom">
-                    <div class="textcopy">© 2019. Copyright by Honda VietNam</div>
+                    <div class="textcopy">© 2019. Copyright by Racing VietNam</div>
                     <span class="textcopy">|</span>
                     <span class="textcopy">
                         <a style="color:#cc0000;" href="#">Terms and Conditions</a>
@@ -195,18 +195,6 @@
                     <span class="textcopy">
                         <a style="color:#cc0000;" href="#">Cookie Policy</a>
                     </span>
-
-
-
-
-
-
-
-
-
-
-
-
                 </div>
             </div>
         </div>

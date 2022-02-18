@@ -103,10 +103,12 @@ class PageController extends Controller
         }
 
 
-        // Mail::send('banxe.email',$data, function($emaill){
-        //     $emaill->to($vvvv=$req->email;);
-        //     $emaill -> subject('Racing - Xác nhận đơn hàng!');
-        // });
+        Mail::send('banxe.email',compact('bills'), function($emaill) use($bills){
+            $emaill->to($bills->email);
+            $emaill -> subject('Racing - Xác nhận đơn hàng!');
+        });
+        // return redirect()->back();
+        // return view('banxe.email',compact('bills'));
 
        Session::forget('cart');
         return view('banxe.done');
@@ -183,6 +185,7 @@ class PageController extends Controller
         return view('banxe.admin.billdetail',compact('billd'));
        
     }
+    
 
     public function getDone(){
        
