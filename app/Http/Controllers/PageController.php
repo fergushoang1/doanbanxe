@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\View;
+use Mail;
 
 class PageController extends Controller
 {
@@ -88,6 +89,10 @@ class PageController extends Controller
         $bills->ngaynhanxe=$req->ngaynhanxe;
         $bills->save();
 
+       
+
+
+
         foreach($cart->items as $key=>$value){
             $bill_detail=new BillDetail;
             $bill_detail->id_bill=$bills->id;
@@ -96,6 +101,12 @@ class PageController extends Controller
             $bill_detail->unit_price=$value['price']/$value['qty'];
             $bill_detail->save();
         }
+
+
+        // Mail::send('banxe.email',$data, function($emaill){
+        //     $emaill->to($vvvv=$req->email;);
+        //     $emaill -> subject('Racing - Xác nhận đơn hàng!');
+        // });
 
        Session::forget('cart');
         return view('banxe.done');
