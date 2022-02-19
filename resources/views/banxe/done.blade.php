@@ -14,7 +14,7 @@
             <h1><b> Đặt Hàng Thành Công</b></h1>
         </div>
         <div class="row mt-5">
-           <p>Vui lòng vào Mail để xem lại Đơn Hàng của bạn</p>
+           <h2>Vui lòng vào Mail để xem lại Đơn Hàng của bạn</h2>
         </div>
         <div class="row food-oder">
             <h1>Cảm Ơn Bạn đã đặt hàng</h1>

@@ -355,11 +355,8 @@ tr:hover .cut {
   <header>
     <h1>Chi tiết đơn hàng</h1>
     <address contenteditable>
-    	
-      <p>{{ $billd ->name}}</p>
-      <p>{{ $billd ->address}}</p>
-      <p>{{ $billd ->phone}}</p>
-      <p>{{ $billd ->email}}</p>
+    <img src="/image/xe1.png" alt="" style="width: auto; height: 120px;">
+      
       
       
     </address>
@@ -368,7 +365,27 @@ tr:hover .cut {
   <article>
     <h1>Recipient</h1>
     <address contenteditable>
-      <img src="/image/xe1.png" alt="" style="width: auto; height: 120px;">
+    <table class="" style=" display:inline-block; font-size: 11px;">
+      <tr>
+        <th><span contenteditable>Tên khách hàng</span></th>
+        <td><span contenteditable>{{ $billd ->name}}</span></td>
+      </tr>
+      <tr>
+        <th><span contenteditable>Địa Chỉ</span></th>
+        <td><span contenteditable>{{ $billd ->address}}</span></td>
+      </tr>
+      <tr>
+        <th><span contenteditable>Số điện thoại</span></th>
+        <td><span id="prefix" contenteditable>{{ $billd ->phone}}</span></td>
+      </tr><tr>
+        <th><span contenteditable>Email</span></th>
+        <td><span id="prefix" contenteditable>{{ $billd ->email}}</span></td>
+      </tr>
+    </table>
+      <!-- <p>{{ $billd ->name}}</p>
+      <p>{{ $billd ->address}}</p>
+      <p>{{ $billd ->phone}}</p>
+      <p>{{ $billd ->email}}</p> -->
     </address>
     <table class="meta">
       <tr>
@@ -384,28 +401,33 @@ tr:hover .cut {
         <td><span id="prefix" contenteditable>{{ $billd ->ngaynhanxe}}</span></td>
       </tr>
     </table>
+    
     <table class="inventory">
       <thead>
         <tr>
           <th><span contenteditable>Tên xe</span></th>       
-          <th><span contenteditable>Giá</span></th>
+          
           <th><span contenteditable>Số lượng</span></th>
-          <th><span contenteditable>Ghi chú</span></th>
-          <th><span contenteditable>Tổng</span></th>
+         
+          <th><span contenteditable>Giá</span></th>
         </tr>
       </thead>
       <tbody>
+      @foreach ($bills as $bills)
         <tr>
-          <td><a class="cut">-</a><span contenteditable>{{ $billd ->tenxe}}</span></td>         
-          <td><span data-prefix></span><span contenteditable>{{ $billd ->unit_price}}</span><span>VNĐ</span></td>
-          <td><span contenteditable>{{ $billd ->quantity}}</span></td>
-          <td><span contenteditable>{{ $billd ->note}}</span></td>
-          <td><span data-prefix>{{ $billd ->total}}</span><span>VNĐ</span></td>
+          <td><a class="cut">-</a><span contenteditable>{{ $bills ->tenxe }}</span></td>         
+          
+          <td><span contenteditable>{{ $bills ->quantity}}</span></td>
+          
+          <td><span data-prefix>{{ $bills ->unit_price}}</span><span>VNĐ</span></td>
         </tr>
-      </tbody>
+        
+      @endforeach
+      
     </table>
     
     <table class="balance">
+    
       <tr>
         <th><span contenteditable>Tổng cộng</span></th>
         <td><span>{{ $billd ->total}}</span><span>VNĐ</span></td>
@@ -414,8 +436,9 @@ tr:hover .cut {
   </article>
   <aside>
     <h1><span contenteditable>NGUYÊN HOÀNG RACING</span></h1>
+    <p style="font-size: 18px; font-weight: 800; margin-bottom: 20px;">Ghi chú của khách hàng:</p>
     <div contenteditable>
-      <p>A finance charge of 1.5% will be made on unpaid balances after 30 days.</p>
+      <p>{{ $billd ->note}}</p>
     </div>
   </aside>
 </body>

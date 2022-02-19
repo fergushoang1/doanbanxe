@@ -39,8 +39,8 @@ return [
             'host' => 'smtp.gmail.com',
             'port' => 587,
             'encryption' => 'tls',
-            'username' => 'nguyentrandn11@gmail.com',
-            'password' => 'hdnbakdpzywmqlqi',
+            'username' => 'racingnguyenhoang@gmail.com',
+            'password' => 'rgcualwfyjrlbiqf',
             'timeout' => null,
             'auth_mode' => null,
         ],
@@ -92,8 +92,8 @@ return [
     */
 
     'from' => [
-        'address' => 'nguyentrandn11@gmail.com',
-        'name' => 'Racing',
+        'address' => 'racingnguyenhoang@gmail.com',
+        'name' => 'Racing NguyenHoang',
     ],
 
     /*

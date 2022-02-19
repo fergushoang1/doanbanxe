@@ -51,68 +51,78 @@ class PageController extends Controller
     }
 
     public function getDathang(){
-       
-       
         return view('banxe.dathang');
-       
     }
 
-     public function postDathang(Request $req){
-        $cart = Session::get('cart');
+    public function postDathang(Request $req){
+            $cart = Session::get('cart');
 
-        $customer=new Customer;
-        $customer->name=$req->name;
-        $customer->gender=$req->gender;
-        $customer->email=$req->email;
-        $customer->address=$req->address;
-        $customer->phone=$req->phone;
-        $customer->note=$req->note;
-        $customer->save();
-          
-        $bills=new Bill;
-        $bills->id_customer=$customer->id;
-        $bills->date_order=date('Y-m-d');
-        $bills->name=$req->name;
-        $bills->email=$req->email;
-        $bills->gender=$req->gender;
-        $bills->address=$req->address;
-        $bills->phone=$req->phone;
+            $customer=new Customer;
+                $customer->name=$req->name;
+                $customer->gender=$req->gender;
+                $customer->email=$req->email;
+                $customer->address=$req->address;
+                $customer->phone=$req->phone;
+                $customer->note=$req->note;
+                $customer->save();
+            
+            $bills=new Bill;
+                $bills->id_customer=$customer->id;
+                $bills->date_order=date('Y-m-d');
+                $bills->name=$req->name;
+                $bills->email=$req->email;
+                $bills->gender=$req->gender;
+                $bills->address=$req->address;
+                $bills->phone=$req->phone;
 
         foreach($cart->items as $key=>$value){
-        $bills->tenxe=$value['item']['name'];}
+            }
 
-        $bills->quantity=$cart->totalQty;
-        $bills->unit_price=$value['item']['unit_price'];       
-        $bills->total=$cart->totalPrice;
-        $bills->payment=$req->payment;
-        $bills->note=$req->note;
-        $bills->ngaynhanxe=$req->ngaynhanxe;
-        $bills->save();
-
-       
-
-
+                $bills->quantity=$cart->totalQty;
+                $bills->unit_price=$value['item']['unit_price'];       
+                $bills->total=$cart->totalPrice;
+                $bills->payment=$req->payment;
+                $bills->note=$req->note;
+                $bills->ngaynhanxe=$req->ngaynhanxe;
+                $bills->save();
 
         foreach($cart->items as $key=>$value){
             $bill_detail=new BillDetail;
-            $bill_detail->id_bill=$bills->id;
-            $bill_detail->id_product=$key;
-            $bill_detail->quantity=$value['qty'];
-            $bill_detail->unit_price=$value['price']/$value['qty'];
-            $bill_detail->save();
+                $bill_detail->tenxe=$value['item']['name'];
+                $bill_detail->id_bill=$bills->id;
+                $bill_detail->id_product=$key;
+                $bill_detail->quantity=$value['qty'];
+                $bill_detail->unit_price=$value['price']/$value['qty'];
+                $bill_detail->save();
         }
+       
+    //--------Xac Nhan Email---------------- 
+    // $billmail = BillDetail::find($req->id);
+    
+    // Mail::send('banxe.email',compact('bills','billmail'), function($emaill) use($bills){
+    //     $emaill->to($bills->email) ;
+    //     $emaill -> subject('Racing - Xác nhận đơn hàng!');
+    // });
 
-
-        Mail::send('banxe.email',compact('bills'), function($emaill) use($bills){
-            $emaill->to($bills->email);
-            $emaill -> subject('Racing - Xác nhận đơn hàng!');
-        });
-        // return redirect()->back();
-        // return view('banxe.email',compact('bills'));
-
+    
+    // -----------DONE-----------------------
        Session::forget('cart');
         return view('banxe.done');
     }
+
+    public function getBillmail( Request $product_request,$id){
+        
+        $billd = Bill::where('id',$id)->first();
+        $bills = BillDetail::where('id_bill',$id)->get();
+        // 
+            Mail::send('banxe.admin.billdetail',compact('billd','bills'), function($emaill) use($billd){
+                $emaill->to($billd->email) ;
+                $emaill -> subject('Racing - Xác nhận đơn hàng!');
+            });
+
+        return view('banxe.email',compact('billd','bills'));
+    }
+    
 
      public function getAll_product(){
         $all = prCar::all();
@@ -180,18 +190,15 @@ class PageController extends Controller
         return view('banxe.admin.bill',compact('bill'));
     }
 
-     public function getBilldetail($id){
+    public function getBilldetail($id){
         $billd = Bill::where('id',$id)->first();
-        return view('banxe.admin.billdetail',compact('billd'));
-       
+        $bills = BillDetail::where('id_bill',$id)->get();
+        return view('banxe.admin.billdetail',compact('billd','bills'));
     }
     
 
     public function getDone(){
-       
         return view('banxe.done');
     }
-
-
-
+    
 }

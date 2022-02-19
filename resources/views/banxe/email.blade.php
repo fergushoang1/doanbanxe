@@ -406,15 +406,7 @@ tr:hover .cut {
           <th><span contenteditable>Giá</span></th>
         </tr>
       </thead>
-      <tbody>
-        <tr>
-          <td><a class="cut">-</a><span contenteditable>{{ $bills->tenxe}}</span></td>         
-          <td><span data-prefix></span><span contenteditable>{{ $bills->unit_price}}</span><span>VNĐ</span></td>
-          <td><span contenteditable>{{ $bills->quantity}}</span></td>
-          <td><span contenteditable>{{ $bills->note}}</span></td>
-          <td><span data-prefix>{{ $bills->total}}</span><span>VNĐ</span></td>
-        </tr>
-      </tbody>
+     
     </table>
     
     <table class="balance">

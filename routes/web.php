@@ -60,5 +60,6 @@ Route::get('/billdetail/{id}', [PageController::class,'getBilldetail'])->name('b
 
 Route::get('/done', [PageController::class,'getDone'])->name('banxe.done');
 
+// --------------------
 
 

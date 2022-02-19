@@ -56,7 +56,9 @@
     <a class="scroll-to-top">
         <div class="inner"></div>
     </a>
-   
+   <!-- Link BoxChat -->
+   <script src="https://uhchat.net/code.php?f=41e01e"></script>
+
     <script type="text/javascript" src="https://www.honda.com.vn/js/feel-the-performance/app.js"></script>
     <script type="text/javascript" src="https://www.honda.com.vn/js/jquery.min.js"></script>
     <script type="text/javascript" src="https://www.honda.com.vn/js/tween-max.min.js"></script>
