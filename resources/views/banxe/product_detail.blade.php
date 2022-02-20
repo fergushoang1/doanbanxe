@@ -222,82 +222,85 @@
         <div class="col-12 spec-inner">
                         <div class="row spec-item">
                 <div class="col-12 col-lg-5 spec-item-label">Khối lượng bản thân</div>
-                <div class="col-12 col-lg-7 spec-item-value"><p>109kg</p></div>
+                <div class="col-12 col-lg-7 spec-item-value"><p>{{$sanpham->khoiluongbanthan}}</p></div>
             </div>
                                     <div class="row spec-item">
                 <div class="col-12 col-lg-5 spec-item-label">Dài x Rộng x Cao</div>
-                <div class="col-12 col-lg-7 spec-item-value"><p>1.910 x 718 x 1.002mm</p></div>
+                <div class="col-12 col-lg-7 spec-item-value"><p>{{$sanpham->dairongcao}}</p></div>
             </div>
-                                    <div class="row justify-content-center spec-item">
-                <div class="col-12 col-lg-5 spec-item-label">Khoảng cách trục bánh xe</div>
-                <div class="col-12 col-lg-7 spec-item-value"><p>1.243mm</p></div>
-            </div>
-                                    <div class="row spec-item">
-                <div class="col-12 col-lg-5 spec-item-label">Độ cao yên</div>
-                <div class="col-12 col-lg-7 spec-item-value"><p>780mm</p></div>
-            </div>
-                                    <div class="row spec-item">
-                <div class="col-12 col-lg-5 spec-item-label">Khoảng sáng gầm xe</div>
-                <div class="col-12 col-lg-7 spec-item-value"><p>136mm</p></div>
-            </div>
+                                                                                                 
                                     <div class="row spec-item">
                 <div class="col-12 col-lg-5 spec-item-label">Dung tích bình xăng</div>
-                <div class="col-12 col-lg-7 spec-item-value"><p>3,7 lít</p></div>
+                <div class="col-12 col-lg-7 spec-item-value"><p>{{$sanpham->dungtichbinhxang}}</p></div>
             </div>
-                                    <div class="row spec-item">
-                <div class="col-12 col-lg-5 spec-item-label">Kích cỡ lớp trước/ sau</div>
-                <div class="col-12 col-lg-7 spec-item-value"><p>Lốp trước: 70/90-17M/C 38P<br>Lốp sau: 80/90-17M/C 50P</p></div>
-            </div>
-                                    <div class="row spec-item">
-                <div class="col-12 col-lg-5 spec-item-label">Phuộc trước</div>
-                <div class="col-12 col-lg-7 spec-item-value"><p>Ống lồng, giảm chấn thủy lực</p></div>
-            </div>
-                                    <div class="row spec-item">
-                <div class="col-12 col-lg-5 spec-item-label">Phuộc sau</div>
-                <div class="col-12 col-lg-7 spec-item-value"><p>Lò xo trụ đơn</p></div>
-            </div>
+                                                                                                     
                                     <div class="row spec-item">
                 <div class="col-12 col-lg-5 spec-item-label">Loại động cơ</div>
-                <div class="col-12 col-lg-7 spec-item-value"><p>PGM-FI, 4 kỳ, xy-lanh đơn, làm mát bằng không khí</p></div>
+                <div class="col-12 col-lg-7 spec-item-value"><p>{{$sanpham->loaidongco}}</p></div>
             </div>
                                     <div class="row spec-item">
                 <div class="col-12 col-lg-5 spec-item-label">Công suất tối đa</div>
-                <div class="col-12 col-lg-7 spec-item-value"><p>6,87kW/7.500 vòng/phút</p></div>
+                <div class="col-12 col-lg-7 spec-item-value"><p>{{$sanpham->congsuattoida}}</p></div>
             </div>
-                                    <div class="row spec-item">
-                <div class="col-12 col-lg-5 spec-item-label">Dung tích nhớt máy</div>
-                <div class="col-12 col-lg-7 spec-item-value"><p>"0,8 lít khi thay nhớt<br>1,0 lít khi rã máy"</p></div>
-            </div>
+                                    
                                     <div class="row spec-item">
                 <div class="col-12 col-lg-5 spec-item-label">Mức tiêu thụ nhiên liệu</div>
-                <div class="col-12 col-lg-7 spec-item-value"><p>1,50l/100km</p></div>
+                <div class="col-12 col-lg-7 spec-item-value"><p>{{$sanpham->muctieuthunhienlieu}}</p></div>
             </div>
-                                                <div class="row spec-item">
-                <div class="col-12 col-lg-5 spec-item-label">Loại truyền động</div>
-                <div class="col-12 col-lg-7 spec-item-value"><p>Cơ khí</p></div>
-            </div>
+                                                
                                     <div class="row spec-item">
                 <div class="col-12 col-lg-5 spec-item-label">Hệ thống khởi động</div>
-                <div class="col-12 col-lg-7 spec-item-value"><p>Điện</p></div>
+                <div class="col-12 col-lg-7 spec-item-value"><p>{{$sanpham->hethongkhoidong}}</p></div>
             </div>
-                                    <div class="row spec-item">
-                <div class="col-12 col-lg-5 spec-item-label">Moment cực đại</div>
-                <div class="col-12 col-lg-7 spec-item-value"><p>10,15Nm/5.000 vòng/phút</p></div>
-            </div>
-                                    <div class="row spec-item">
-                <div class="col-12 col-lg-5 spec-item-label">Dung tích xy-lanh</div>
-                <div class="col-12 col-lg-7 spec-item-value"><p>123,94 cm3</p></div>
-            </div>
-                                    <div class="row spec-item">
-                <div class="col-12 col-lg-5 spec-item-label">Đường kính x Hành trình pít tông</div>
-                <div class="col-12 col-lg-7 spec-item-value"><p>50,0 mm x 63,1 mm</p></div>
-            </div>
-                                    <div class="row spec-item">
-                <div class="col-12 col-lg-5 spec-item-label">Tỷ số nén</div>
-                <div class="col-12 col-lg-7 spec-item-value"><p>10,0:1</p></div>
-            </div>
+                                    
+                                                                 
+                                   
                     </div>
     </div>
+
+    {{-- <div class="row title">Thư viện</div>
+        <div class="row detail-item library">
+                    <div class="col-12 col-lg-6">
+                <img class="library-top" src="https://cdn.honda.com.vn/motorbikes/October2021/YAfoIV9dgf1akYSnSjj4.png" alt="">
+        </div>
+                    <div class="col-12 col-lg-6">
+                <img class="library-top" src="https://cdn.honda.com.vn/motorbikes/October2021/C8LgmbBzbjqIJNPmXYpZ.png" alt="">
+        </div>
+                        <div class="col-6 col-lg-3">
+            <img class="library-mid" src="https://cdn.honda.com.vn/motorbikes/October2021/nuRedtB9JREnqcxDDvY3.png" alt="">
+        </div>
+                        <div class="col-6 col-lg-3">
+            <img class="library-mid" src="https://cdn.honda.com.vn/motorbikes/October2021/0EnDyFv3F7odmaohrc3y.png" alt="">
+        </div>
+    </div> --}}
+{{-- <div class="history-ctn">
+    <div class="title">Lịch sử đời xe</div>
+    <div class="detail-item history">
+                <div class="history-carousel-inner-slick w-100">
+                        <div class="history-carousel-item">
+                <div class="row">
+                    <div class="product">
+                        <img src="https://cdn.honda.com.vn/motorbike-generation/October2021/dsY9erMFzXb67zyMVzt4.png" alt="">
+                        <span>Super Cub C125 2018</span>
+                    </div>
+                    <div class="divider">
+                        <div class="divider-item"></div>
+                    </div>
+                </div>
+            </div>
+                        <div class="history-carousel-item">
+                <div class="row">
+                    <div class="product">
+                        <img src="https://cdn.honda.com.vn/motorbike-generation/October2021/7pMk67N4nK1oVrocU8hK.png" alt="">
+                        <span>Super Cub C125 2021</span>
+                    </div>
+                    <div class="divider">
+                        <div class="divider-item"></div>
+                    </div>
+                </div>
+            </div>
+                    </div>
+            </div>
 
     {{-- <div class="row title">Thư viện</div>
         <div class="row detail-item library">

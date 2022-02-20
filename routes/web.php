@@ -50,6 +50,10 @@ Route::get('/product-add', [PageController::class,'getProductadd'])->name('banxe
 
 Route::post('/product-add', [PageController::class,'postProductadd'])->name('banxe.proaddpost');
 
+Route::get('/product-edit/{id}', [PageController::class,'getProductedit'])->name('banxe.proedit');
+
+Route::post('/product-edit/{id}', [PageController::class,'postProductedit'])->name('banxe.proeditpost');  
+
 Route::get('/product-list', [PageController::class,'getProductlist'])->name('banxe.prolist');
 
 Route::get('/delete/{id}', [PageController::class,'getDelete'])->name('delete');

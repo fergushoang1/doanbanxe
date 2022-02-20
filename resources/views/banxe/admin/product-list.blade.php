@@ -37,7 +37,7 @@
                                 <td>{{$pr->id_type}}</td>
                                 <td class="center"><i class="fa fa-trash-o  fa-fw"></i>
                                     <a href="{{route('delete',$pr->id)}}"> Delete</a></td>
-                                <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="#">Edit</a></td>
+                                <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="{{route('banxe.proedit',$pr->id)}}">Edit</a></td>
                             </tr>
                             @endforeach
                         </tbody>

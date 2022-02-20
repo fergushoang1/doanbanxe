@@ -83,7 +83,7 @@
                                     <a href="{{route('banxe.bill')}}">Bill</a>
                                 </li>
                                 <li>
-                                    <a href="#">...</a>
+                                    <a href="#">Thông tin khách hàng</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
