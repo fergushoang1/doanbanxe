@@ -18,7 +18,7 @@
                     </div>
                     <!-- /.col-lg-12 -->
                     <div class="col-lg-7" style="padding-bottom:120px">
-                        <form action="" method="POST" enctype="multipart/form-data">
+                        <form action="" method="POST" class="needs-validation" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group">
                                 <label>Chọn loại xe</label>
@@ -36,15 +36,15 @@
                             </div>
                             <div class="form-group">
                                 <label>Name</label>
-                                <input class="form-control" value="{{$edit->name}}" name="txtName" placeholder="Please Enter Username" />
+                                <input class="form-control" value="{{$edit->name}}" name="txtName" placeholder="Please Enter Username" required=""/>
                             </div>
                             <div class="form-group">
                                 <label>Price</label>
-                                <input class="form-control" value="{{$edit->unit_price}}" name="txtPrice" placeholder="Please Enter price" />
+                                <input class="form-control" value="{{$edit->unit_price}}" name="txtPrice" placeholder="Please Enter price" required=""/>
                             </div>                                                    
                             <div class="form-group">
                                 <label>Images</label>
-                                <input type="file" name="file">
+                                <input required="" type="file" name="file">
                                 <img alt="{{$edit -> image}}" src="/image/{{ $edit -> image}}" height="200" width="200">
                             </div>                            
                             <div class="form-group">
@@ -54,10 +54,10 @@
                             <div class="form-group">
                                 <label>Product Status</label>
                                 <label class="radio-inline">
-                                    <input name="txtnew" value="1" checked="" type="radio">Visible
+                                    <input required="" name="txtnew" value="1" checked="" type="radio">Visible
                                 </label>
                                 <label class="radio-inline">
-                                    <input name="txtnew" value="2" type="radio">Invisible
+                                    <input required="" name="txtnew" value="2" type="radio">Invisible
                                 </label>
                             </div>
                             <h2 class="page-header">Thông số kỹ thuật</h2>
@@ -65,37 +65,37 @@
 
                             <div class="form-group">
                                 <label>Khối lượng bản thân</label>
-                                <input class="form-control" value="{{$edit->khoiluongbanthan}}" name="khoiluongbanthan" placeholder="" />
+                                <input required="" class="form-control" value="{{$edit->khoiluongbanthan}}" name="khoiluongbanthan" placeholder="" />
                             </div>
 
                             <div class="form-group">
                                 <label>Dài x Rộng x Cao</label>
-                                <input class="form-control" value="{{$edit->dairongcao}}" name="dairongcao" placeholder="" />
+                                <input required="" class="form-control" value="{{$edit->dairongcao}}" name="dairongcao" placeholder="" />
                             </div>
 
                             <div class="form-group">
                                 <label>Dung tích bình xăng</label>
-                                <input class="form-control" value="{{$edit->dungtichbinhxang}}" name="dungtichbinhxang" placeholder="" />
+                                <input required="" class="form-control" value="{{$edit->dungtichbinhxang}}" name="dungtichbinhxang" placeholder="" />
                             </div>
 
                             <div class="form-group">
                                 <label>Loại động cơ</label>
-                                <input class="form-control" value="{{$edit->loaidongco}}" name="loaidongco" placeholder="" />
+                                <input required="" class="form-control" value="{{$edit->loaidongco}}" name="loaidongco" placeholder="" />
                             </div>
 
                             <div class="form-group">
                                 <label>Công suất tối da</label>
-                                <input class="form-control" value="{{$edit->congsuattoida}}" name="congsuattoida" placeholder="" />
+                                <input required="" class="form-control" value="{{$edit->congsuattoida}}" name="congsuattoida" placeholder="" />
                             </div>
 
                             <div class="form-group">
                                 <label>Mức tiêu thụ nhiên liệu</label>
-                                <input class="form-control" value="{{$edit->muctieuthunhienlieu}}" name="muctieuthunhienlieu" placeholder="" />
+                                <input required="" class="form-control" value="{{$edit->muctieuthunhienlieu}}" name="muctieuthunhienlieu" placeholder="" />
                             </div>
 
                             <div class="form-group">
                                 <label>Hệ thống khởi động</label>
-                                <input class="form-control" value="{{$edit->hethongkhoidong}}" name="hethongkhoidong" placeholder="" />
+                                <input required="" class="form-control" value="{{$edit->hethongkhoidong}}" name="hethongkhoidong" placeholder="" />
                             </div>
 
 

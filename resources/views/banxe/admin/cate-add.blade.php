@@ -24,11 +24,11 @@
                                 {{ session('success')}}
                             </div>
                         @endif
-                        <form action="{{ route('admin.postCateAdd') }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('admin.postCateAdd') }}" class="needs-validation" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group">
                                 <label>Tên loại</label>
-                                <input class="form-control" name="name" placeholder="Nhập tên loại xe" />
+                                <input required="" class="form-control" name="name" placeholder="Nhập tên loại xe" />
                             </div>
                             
                             <div class="form-group">
@@ -37,7 +37,7 @@
                             </div>
                              <div class="form-group">
                                 <label>Hình ảnh minh họa</label>
-                                <input type="file"  name="file">
+                                <input required="" type="file"  name="file">
                             </div>
                             <button type="submit" class="btn btn-default">Thêm</button>
                             <button type="reset" class="btn btn-default">Reset</button>

@@ -18,7 +18,7 @@
                     </div>
                     <!-- /.col-lg-12 -->
                     <div class="col-lg-7" style="padding-bottom:120px">
-                        <form action="" method="POST" enctype="multipart/form-data">
+                        <form action="" class="needs-validation" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group">
                                 <label>Chọn loại xe</label>
@@ -31,15 +31,15 @@
                             </div>
                             <div class="form-group">
                                 <label>Name</label>
-                                <input class="form-control" name="txtName" placeholder="Please Enter Username" />
+                                <input class="form-control" name="txtName" placeholder="Please Enter Username" required=""/>
                             </div>
                             <div class="form-group">
                                 <label>Price</label>
-                                <input class="form-control" name="txtPrice" placeholder="Please Enter price" />
+                                <input class="form-control" name="txtPrice" placeholder="Please Enter price" required=""/>
                             </div>                                                    
                             <div class="form-group">
                                 <label>Images</label>
-                                <input type="file" name="file">
+                                <input type="file" name="file" required="">
                             </div>                            
                             <div class="form-group">
                                 <label>Product Description</label>
@@ -48,7 +48,7 @@
                             <div class="form-group">
                                 <label>Product Status</label>
                                 <label class="radio-inline">
-                                    <input name="txtnew" value="1" checked="" type="radio">Visible
+                                    <input name="txtnew" value="1" checked="" type="radio" required="">Visible
                                 </label>
                                 <label class="radio-inline">
                                     <input name="txtnew" value="2" type="radio">Invisible
@@ -59,37 +59,37 @@
 
                             <div class="form-group">
                                 <label>Khối lượng bản thân</label>
-                                <input class="form-control" name="khoiluongbanthan" placeholder="" />
+                                <input class="form-control" name="khoiluongbanthan" placeholder="" required=""/>
                             </div>
 
                             <div class="form-group">
                                 <label>Dài x Rộng x Cao</label>
-                                <input class="form-control" name="dairongcao" placeholder="" />
+                                <input class="form-control" name="dairongcao" placeholder="" required=""/>
                             </div>
 
                             <div class="form-group">
                                 <label>Dung tích bình xăng</label>
-                                <input class="form-control" name="dungtichbinhxang" placeholder="" />
+                                <input class="form-control" name="dungtichbinhxang" placeholder="" required=""/>
                             </div>
 
                             <div class="form-group">
                                 <label>Loại động cơ</label>
-                                <input class="form-control" name="loaidongco" placeholder="" />
+                                <input class="form-control" name="loaidongco" placeholder="" required=""/>
                             </div>
 
                             <div class="form-group">
                                 <label>Công suất tối da</label>
-                                <input class="form-control" name="congsuattoida" placeholder="" />
+                                <input class="form-control" name="congsuattoida" placeholder="" required=""/>
                             </div>
 
                             <div class="form-group">
                                 <label>Mức tiêu thụ nhiên liệu</label>
-                                <input class="form-control" name="muctieuthunhienlieu" placeholder="" />
+                                <input class="form-control" name="muctieuthunhienlieu" placeholder="" required=""/>
                             </div>
 
                             <div class="form-group">
                                 <label>Hệ thống khởi động</label>
-                                <input class="form-control" name="hethongkhoidong" placeholder="" />
+                                <input class="form-control" name="hethongkhoidong" placeholder="" required=""/>
                             </div>
                             <button type="submit" class="btn btn-default">Product Add</button>
                             <button type="reset" class="btn btn-default">Reset</button>
