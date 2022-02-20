@@ -13,7 +13,7 @@
                     @endif
                     <div class="col-lg-12">
                         <h1 class="page-header">Product
-                            <small>Add</small>
+                            <small>Edit</small>
                         </h1>
                     </div>
                     <!-- /.col-lg-12 -->
@@ -22,28 +22,34 @@
                             @csrf
                             <div class="form-group">
                                 <label>Chọn loại xe</label>
-                                <select name="option" class="form-control">
-                                    <option>--- Chọn loại xe ---</option>
+                               <select name="option" class="form-control">
+                                    <option value="0" >--- Chọn loại xe ---</option>
                                     @foreach($loaisp as $loai)
-                                <option  value="{{$loai->id}}">{{$loai->name}}</option>
+                                   
+                            <option  value="{{$loai->id}}" <?php if ($edit['id_type']==$loai['id']):?>
+                            selected="selected" 
+                            <?php endif ?> >
+                                        {{$loai->name}}</option>
+                                    
                                     @endforeach
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label>Name</label>
-                                <input class="form-control" name="txtName" placeholder="Please Enter Username" />
+                                <input class="form-control" value="{{$edit->name}}" name="txtName" placeholder="Please Enter Username" />
                             </div>
                             <div class="form-group">
                                 <label>Price</label>
-                                <input class="form-control" name="txtPrice" placeholder="Please Enter price" />
+                                <input class="form-control" value="{{$edit->unit_price}}" name="txtPrice" placeholder="Please Enter price" />
                             </div>                                                    
                             <div class="form-group">
                                 <label>Images</label>
                                 <input type="file" name="file">
+                                <img alt="{{$edit -> image}}" src="/image/{{ $edit -> image}}" height="200" width="200">
                             </div>                            
                             <div class="form-group">
                                 <label>Product Description</label>
-                                <textarea name="description" class="form-control" rows="3"></textarea>
+                                <textarea name="description"  class="form-control" rows="3">{{$edit->description}}</textarea>
                             </div>
                             <div class="form-group">
                                 <label>Product Status</label>
@@ -59,39 +65,42 @@
 
                             <div class="form-group">
                                 <label>Khối lượng bản thân</label>
-                                <input class="form-control" name="khoiluongbanthan" placeholder="" />
+                                <input class="form-control" value="{{$edit->khoiluongbanthan}}" name="khoiluongbanthan" placeholder="" />
                             </div>
 
                             <div class="form-group">
                                 <label>Dài x Rộng x Cao</label>
-                                <input class="form-control" name="dairongcao" placeholder="" />
+                                <input class="form-control" value="{{$edit->dairongcao}}" name="dairongcao" placeholder="" />
                             </div>
 
                             <div class="form-group">
                                 <label>Dung tích bình xăng</label>
-                                <input class="form-control" name="dungtichbinhxang" placeholder="" />
+                                <input class="form-control" value="{{$edit->dungtichbinhxang}}" name="dungtichbinhxang" placeholder="" />
                             </div>
 
                             <div class="form-group">
                                 <label>Loại động cơ</label>
-                                <input class="form-control" name="loaidongco" placeholder="" />
+                                <input class="form-control" value="{{$edit->loaidongco}}" name="loaidongco" placeholder="" />
                             </div>
 
                             <div class="form-group">
                                 <label>Công suất tối da</label>
-                                <input class="form-control" name="congsuattoida" placeholder="" />
+                                <input class="form-control" value="{{$edit->congsuattoida}}" name="congsuattoida" placeholder="" />
                             </div>
 
                             <div class="form-group">
                                 <label>Mức tiêu thụ nhiên liệu</label>
-                                <input class="form-control" name="muctieuthunhienlieu" placeholder="" />
+                                <input class="form-control" value="{{$edit->muctieuthunhienlieu}}" name="muctieuthunhienlieu" placeholder="" />
                             </div>
 
                             <div class="form-group">
                                 <label>Hệ thống khởi động</label>
-                                <input class="form-control" name="hethongkhoidong" placeholder="" />
+                                <input class="form-control" value="{{$edit->hethongkhoidong}}" name="hethongkhoidong" placeholder="" />
                             </div>
-                            <button type="submit" class="btn btn-default">Product Add</button>
+
+
+                             <hr class="mb-4">
+                            <button type="submit" class="btn btn-default">Update</button>
                             <button type="reset" class="btn btn-default">Reset</button>
                         <form>
                     </div>

@@ -149,12 +149,61 @@ class PageController extends Controller
          $product->description = $product_request->description;
          $product->unit_price = $product_request->txtPrice;
          $product->new = $product_request->txtnew;
-
+         $product->khoiluongbanthan = $product_request->khoiluongbanthan;
+         $product->dairongcao = $product_request->dairongcao;
+         $product->dungtichbinhxang = $product_request->dungtichbinhxang;
+         $product->loaidongco = $product_request->loaidongco;
+         $product->congsuattoida = $product_request->congsuattoida;
+         $product->muctieuthunhienlieu = $product_request->muctieuthunhienlieu;
+         $product->hethongkhoidong = $product_request->hethongkhoidong;
          $product->image = $file_name;      
          $product->save();
 
          return redirect()->route('banxe.proadd')->withSuccess('Thêm mới thành công');
 
+    }
+
+    public function getProductedit($id){
+       $loaisp = ProductType::all();
+       $edit = prCar::find($id);
+        return view('banxe.admin.product-edit',compact('edit','loaisp'));
+    }
+
+    public function postProductedit(Request $product_request,$id){
+          
+        $product=prCar::find($id);
+           if($product_request->has ('file')){
+            $file = $product_request->file; 
+            // lấy tên file
+             $file_name = $file->getclientoriginalName (); 
+             // upload
+             $file->move(base_path('public\image'),$file_name);              
+            }
+            else{
+                $file_name = $product->image;
+            }
+
+
+
+       
+         $product = prCar::find($product_request->id);
+         $product->name = $product_request->txtName;
+         $product->id_type = $product_request->option;
+         $product->description = $product_request->description;
+         $product->unit_price = $product_request->txtPrice;
+         $product->new = $product_request->txtnew;
+         $product->khoiluongbanthan = $product_request->khoiluongbanthan;
+         $product->dairongcao = $product_request->dairongcao;
+         $product->dungtichbinhxang = $product_request->dungtichbinhxang;
+         $product->loaidongco = $product_request->loaidongco;
+         $product->congsuattoida = $product_request->congsuattoida;
+         $product->muctieuthunhienlieu = $product_request->muctieuthunhienlieu;
+         $product->hethongkhoidong = $product_request->hethongkhoidong;
+         $product->image = $file_name;
+            
+         $product->save();
+
+         return redirect()->route('banxe.proadd')->withSuccess('Thêm mới thành công');
     }
 
     public function getProductlist(){
