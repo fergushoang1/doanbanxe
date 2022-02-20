@@ -1,4 +1,4 @@
- @extends('banxe.admin.master')
+@extends('banxe.admin.master')
 @section('container')
   <div id="page-wrapper">
             <div class="container-fluid">

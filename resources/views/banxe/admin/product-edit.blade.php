@@ -44,22 +44,14 @@
                             </div>                                                    
                             <div class="form-group">
                                 <label>Images</label>
-                                <input required="" type="file" name="file">
+                                <input  type="file" name="file">
                                 <img alt="{{$edit -> image}}" src="/image/{{ $edit -> image}}" height="200" width="200">
                             </div>                            
                             <div class="form-group">
                                 <label>Product Description</label>
                                 <textarea name="description"  class="form-control" rows="3">{{$edit->description}}</textarea>
                             </div>
-                            <div class="form-group">
-                                <label>Product Status</label>
-                                <label class="radio-inline">
-                                    <input required="" name="txtnew" value="1" checked="" type="radio">Visible
-                                </label>
-                                <label class="radio-inline">
-                                    <input required="" name="txtnew" value="2" type="radio">Invisible
-                                </label>
-                            </div>
+                           
                             <h2 class="page-header">Thông số kỹ thuật</h2>
                              <hr class="mb-4"> 
 

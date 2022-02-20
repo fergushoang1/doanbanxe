@@ -48,9 +48,7 @@
                             </div>
                             <!-- /input-group -->
                         </li>
-                        <li>
-                            <a href="#"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
-                        </li>
+                        
                         <li>
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Category<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
@@ -83,7 +81,7 @@
                                     <a href="{{route('banxe.bill')}}">Bill</a>
                                 </li>
                                 <li>
-                                    <a href="#">Thông tin khách hàng</a>
+                                    <a href="{{route('banxe.customer')}}">Thông tin khách hàng</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->

@@ -87,7 +87,7 @@
                     <li>
                     <a href="{{route('banxe.all_product')}}"> Sản Phẩm </a>
                     </li>
-                    <li><a href="#">Phụ tùng</a></li>
+                    <li><a href="{{route('banxe.phukien')}}">Phụ tùng</a></li>
                     <li class="arrow">
                         <a href="#">Phụ kiện</a>
                         <ul>

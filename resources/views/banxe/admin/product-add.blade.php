@@ -22,7 +22,7 @@
                             @csrf
                             <div class="form-group">
                                 <label>Chọn loại xe</label>
-                                <select name="option" class="form-control">
+                                <select name="option" class="form-control" >
                                     <option>--- Chọn loại xe ---</option>
                                     @foreach($loaisp as $loai)
                                 <option  value="{{$loai->id}}">{{$loai->name}}</option>
@@ -43,17 +43,9 @@
                             </div>                            
                             <div class="form-group">
                                 <label>Product Description</label>
-                                <textarea name="description" class="form-control" rows="3"></textarea>
+                                <textarea name="description" class="form-control" rows="3" required=""></textarea>
                             </div>
-                            <div class="form-group">
-                                <label>Product Status</label>
-                                <label class="radio-inline">
-                                    <input name="txtnew" value="1" checked="" type="radio" required="">Visible
-                                </label>
-                                <label class="radio-inline">
-                                    <input name="txtnew" value="2" type="radio">Invisible
-                                </label>
-                            </div>
+                            
                             <h2 class="page-header">Thông số kỹ thuật</h2>
                              <hr class="mb-4"> 
 

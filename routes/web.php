@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +25,8 @@ Route::get('/chitietsanpham/{id}', [PageController::class,'show'])->name('produc
 
 Route::get('/add-to-cart/{id}',[PageController::class,'addToCart'])->name('banxe.addtocart');
 
+Route::get('/add-to-cartpk/{id}',[PageController::class,'addToCartpk'])->name('banxe.addtocartpk');
+
 Route::get('/del-cart/{id}',[PageController::class,'delCartItem'])->name('banxe.xoagiohang');
 
 Route::get('/dathang',[PageController::class,'getDathang'])->name('banxe.dathang');
@@ -41,8 +44,8 @@ Route::group(['prefix'=>'admin'],function(){
             Route::get('them',[CategoryController::class,'getCateAdd'])->name('admin.getCateAdd');
             Route::post('them',[CategoryController::class,'postCateAdd'])->name('admin.postCateAdd');
             // Route::get('xoa/{id}',[CategoryController::class,'getCateDelete'])->name('admin.getCateDelete');
-            // Route::get('sua/{id}',[CategoryController::class,'getCateEdit'])->name('admin.getCateEdit');
-            // Route::post('sua/{id}',[CategoryController::class,'postCateEdit'])->name('admin.postCateEdit');
+            Route::get('sua/{id}',[CategoryController::class,'getCateEdit'])->name('admin.getCateEdit');
+            Route::post('sua/{id}',[CategoryController::class,'postCateEdit'])->name('admin.postCateEdit');
         });
  });
 
@@ -56,6 +59,12 @@ Route::post('/product-edit/{id}', [PageController::class,'postProductedit'])->na
 
 Route::get('/product-list', [PageController::class,'getProductlist'])->name('banxe.prolist');
 
+Route::get('/phukien', [PageController::class,'getPhukien'])->name('banxe.phukien');
+
+Route::get('/chitietphukien/{id}', [PageController::class,'getChitietphukien'])->name('banxe.chitietphukien');
+
+Route::get('/customer', [PageController::class,'getCustomer'])->name('banxe.customer');
+
 Route::get('/delete/{id}', [PageController::class,'getDelete'])->name('delete');
 
 Route::get('/bill', [PageController::class,'getBill'])->name('banxe.bill');
@@ -64,6 +73,13 @@ Route::get('/billdetail/{id}', [PageController::class,'getBilldetail'])->name('b
 
 Route::get('/done', [PageController::class,'getDone'])->name('banxe.done');
 
+Route::get('/login', [LoginController::class,'getLogin']);
+Route::post('/login', [LoginController::class,'postLogin']);
+
 // --------------------
 
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

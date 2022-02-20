@@ -8,6 +8,7 @@ use App\Models\Slide;
 use App\Models\Product;
 use App\Models\ProductType;
 use App\Models\Customer;
+use App\Models\Phukien;
 use App\Models\Cart;
 use App\Models\User;
 use App\Models\Bill;
@@ -34,6 +35,15 @@ class PageController extends Controller
 
     public function addToCart(Request $request,$id){
         $product=prCar::find($id);
+        $oldCart=Session('cart')?Session::get('cart'):null;
+        $cart=new Cart($oldCart);
+        $cart->add($product,$id);
+        $request->session()->put('cart',$cart);
+        return redirect()->back();
+    }
+
+    public function addToCartpk(Request $request,$id){
+        $product=Phukien::find($id);
         $oldCart=Session('cart')?Session::get('cart'):null;
         $cart=new Cart($oldCart);
         $cart->add($product,$id);
@@ -96,6 +106,7 @@ class PageController extends Controller
                 $bill_detail->tenxe=$value['item']['name'];
                 $bill_detail->id_bill=$bills->id;
                 $bill_detail->id_product=$key;
+                $bill_detail->id_phukien=$key;
                 $bill_detail->quantity=$value['qty'];
                 $bill_detail->unit_price=$value['price']/$value['qty'];
                 $bill_detail->save();
@@ -203,13 +214,30 @@ class PageController extends Controller
             
          $product->save();
 
-         return redirect()->route('banxe.proadd')->withSuccess('Thêm mới thành công');
+         return redirect()->route('banxe.prolist')->withSuccess('Sửa thành công');
     }
 
     public function getProductlist(){
          $prlist = prCar::all();
         return view('banxe.admin.product-list',compact('prlist'));
     }
+
+     public function getPhukien(){
+         $phukien = Phukien::all();
+        return view('banxe.phukien',compact('phukien'));
+    }
+
+    public function getChitietphukien($id){
+        $chitietpk= Phukien::where('id',$id)->first();
+        return view('banxe.chitietphukien',compact('chitietpk'));
+       
+    }
+
+    public function getCustomer(){
+         $cus = Customer::all();
+        return view('banxe.admin.customer',compact('cus'));
+    }
+
 
     public function getDelete($id){
          $dlt = prCar::find($id);
@@ -223,6 +251,9 @@ class PageController extends Controller
          $dlt->delete();
         return redirect()->route('banxe.prolist')->withSuccess('Xoá thành công');
     }
+
+     
+
 
     public function getBill(){
          $bill = Bill::all();
@@ -240,4 +271,6 @@ class PageController extends Controller
         return view('banxe.done');
     }
     
+
+
 }

@@ -55,6 +55,35 @@ class CategoryController extends Controller
 
     }
 
+    public function getCateEdit($id){
+        $edit = ProductType::find($id);
+        return view('banxe.admin.cate-edit',compact('edit'));
+    }
+
+
+    public function postCateEdit(Request $product_request,$id){
+
+        $product=ProductType::find($id);
+        if($product_request->has ('file')){
+            $file = $product_request->file; 
+            // lấy tên file
+             $file_name = $file->getclientoriginalName (); 
+             // upload
+             $file->move(base_path('public\imagetype'),$file_name);              
+            }
+            else{
+                $file_name = $product->image;
+            }
+
+        $product = ProductType::find($product_request->id);
+         $product->name = $product_request->name;   
+         $product->description = $product_request->mota;    
+         $product->image = $file_name;  
+         $product->save();
+
+         return redirect()->route('admin.getCateList')->withSuccess('Sửa thành công');
+    }
+
 
 
 }

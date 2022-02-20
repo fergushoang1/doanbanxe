@@ -36,7 +36,7 @@
                                 <td><img alt="{{$all -> image}}" src="/imagetype/{{ $all -> image}}" height="200" width="200">
                                 </td>
                                 <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="{{route('delete',$all->id)}}"> Delete</a></td>
-                                <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="#">Edit</a></td>
+                                <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="{{route('admin.postCateEdit',$all->id)}}">Edit</a></td>
                             </tr>
                             @endforeach
                         </tbody>
