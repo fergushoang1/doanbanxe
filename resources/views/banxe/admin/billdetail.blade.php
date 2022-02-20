@@ -349,18 +349,17 @@ tr:hover .cut {
   <link rel="stylesheet" href="style.css">
   <link rel="license" href="https://www.opensource.org/licenses/mit-license/">
   <script src="script.js"></script>
+  
 </head>
 
 <body>
   <header>
     <h1>Chi tiết đơn hàng</h1>
+    <a href="{{Route('banxe.bill') }} ">
     <address contenteditable>
     <img src="/image/xe1.png" alt="" style="width: auto; height: 120px;">
-      
-      
-      
     </address>
-    
+    </a>
   </header>
   <article>
     <h1>Recipient</h1>
@@ -382,10 +381,7 @@ tr:hover .cut {
         <td><span id="prefix" contenteditable>{{ $billd ->email}}</span></td>
       </tr>
     </table>
-      <!-- <p>{{ $billd ->name}}</p>
-      <p>{{ $billd ->address}}</p>
-      <p>{{ $billd ->phone}}</p>
-      <p>{{ $billd ->email}}</p> -->
+      
     </address>
     <table class="meta">
       <tr>

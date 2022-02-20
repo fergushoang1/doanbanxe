@@ -109,7 +109,6 @@ body {
   background: #fff;
   border-radius: 1px;
   box-shadow: 0 0 1in -0.25in rgba(0, 0, 0, 0.5);
- 
 }
 
 /* header */
@@ -172,7 +171,7 @@ article,
 article address,
 table.meta,
 table.inventory {
-  margin: 0 0 6em;
+  margin: 0 0 3em;
 }
 article:after {
   clear: both;
@@ -350,15 +349,13 @@ tr:hover .cut {
   <link rel="stylesheet" href="style.css">
   <link rel="license" href="https://www.opensource.org/licenses/mit-license/">
   <script src="script.js"></script>
-
 </head>
 
 <body>
   <header>
     <h1>Chi tiết đơn hàng</h1>
     <address contenteditable>
-    	
-      <p></p>
+    <img src="/image/xe1.png" alt="" style="width: auto; height: 120px;">
       
       
       
@@ -368,58 +365,76 @@ tr:hover .cut {
   <article>
     <h1>Recipient</h1>
     <address contenteditable>
-      <img src="/image/xe1.png" alt="" style="width: auto; height: 120px;">
+    <table class="" style=" display:inline-block; font-size: 11px;">
+      <tr>
+        <th><span contenteditable>Tên khách hàng</span></th>
+        <td><span contenteditable>{{ $data['bills']['name'] }}</span></td>
+      </tr>
+      <tr>
+        <th><span contenteditable>Địa Chỉ</span></th>
+        <td><span contenteditable>{{ $data['bills']['address'] }}</span></td>
+      </tr>
+      <tr>
+        <th><span contenteditable>Số điện thoại</span></th>
+        <td><span id="prefix" contenteditable>{{ $data['bills']['phone'] }}</span></td>
+      </tr><tr>
+        <th><span contenteditable>Email</span></th>
+        <td><span id="prefix" contenteditable>{{ $data['bills']['email'] }}</span></td>
+      </tr>
+    </table>
+      
     </address>
     <table class="meta">
       <tr>
-        <th><span contenteditable>Mã Đơn Hàng</span></th>
-        <td><span contenteditable>{{ $bills->id}}</span></td>
-      </tr>
-      <tr>
-        <th><span contenteditable>Tên Khách Hàng</span></th>
-        <td><span contenteditable>{{ $bills->name}}</span></td>
-      </tr>
-      <tr>
-        <th><span contenteditable>Số Điện Thoại</span></th>
-        <td><span contenteditable>{{$bills->phone}}</span></td>
+        <th><span contenteditable>Mã đơn hàng</span></th>
+        <td><span contenteditable>{{ $data['bills']['id'] }}</span></td>
       </tr>
       <tr>
         <th><span contenteditable>Ngày đặt hàng</span></th>
-        <td><span contenteditable>{{$bills->created_at}}</span></td>
+        <td><span contenteditable>{{ $data['bills']['date_order'] }}</span></td>
       </tr>
       <tr>
         <th><span contenteditable>Ngày nhận xe</span></th>
-        <td><span id="prefix" contenteditable>{{$bills->ngaynhanxe}}</span></td>
-      </tr>
-      <tr>
-        <th><span contenteditable>Hình Thức Thanh Toán</span></th>
-        <td><span id="prefix" contenteditable>{{$bills->ngaynhanxe}}</span></td>
+        <td><span id="prefix" contenteditable>{{ $data['bills']['ngaynhanxe'] }}</span></td>
       </tr>
     </table>
+    
     <table class="inventory">
       <thead>
         <tr>
           <th><span contenteditable>Tên xe</span></th>       
-          <th><span contenteditable>Giá</span></th>
+          
           <th><span contenteditable>Số lượng</span></th>
-          <th><span contenteditable>Ghi chú</span></th>
+         
           <th><span contenteditable>Giá</span></th>
         </tr>
       </thead>
-     
+      <tbody>
+      @foreach($data['donhang']['chitiet'] as $item)
+        <tr>
+          <td><a class="cut">-</a><span contenteditable>{{ $item['tenxe'] }}</span></td>         
+          
+          <td><span contenteditable>{{ $item['quantity'] }}</span></td>
+          
+          <td><span data-prefix>{{ $item['unit_price'] }}</span><span>VNĐ</span></td>
+        </tr>
+      @endforeach
+      
     </table>
     
     <table class="balance">
+    
       <tr>
         <th><span contenteditable>Tổng cộng</span></th>
-        <td><span>{{ $bills->total}}</span><span>VNĐ</span></td>
+        <td><span>{{ $data['bills']['total'] }}</span><span>VNĐ</span></td>
       </tr>     
     </table>
   </article>
   <aside>
     <h1><span contenteditable>NGUYÊN HOÀNG RACING</span></h1>
+    <p style="font-size: 18px; font-weight: 800; margin-bottom: 20px;">Ghi chú của khách hàng:</p>
     <div contenteditable>
-      {{-- <p>A finance charge of 1.5% will be made on unpaid balances after 30 days.</p> --}}
+      <p>{{ $data['bills']['note'] }}</p>
     </div>
   </aside>
 </body>
