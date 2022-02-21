@@ -87,3 +87,19 @@ input:focus:invalid {
 .drop_hide {
     display: none;
 }
+
+
+/* --------------------- */
+
+.timkiem {
+    width: 300px;
+}
+
+.input {
+    width: 200px;
+    height: 40px;
+}
+
+input:focus {
+    border: 2px solid red;
+}

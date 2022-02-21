@@ -1,6 +1,20 @@
 <header>
     <div>
+        
         <ul>
+            <li class="w-25">
+                <div>
+                    <form action="{{URL::To('/search')}}" method="POST">
+                        {{csrf_field()}}
+                        <div class="timkiem input-group input-group-lg col-12" style="width: 400px">	
+                            <div class="col col-8 input">					
+                                <input type="text"  name="keywords_submit" id="keywords_submit" class="form-control" style="height: 40px; width: 250px" placeholder="Tìm Kiếm..."/>
+                            </div>
+                            
+                        </div>
+                    </form>
+                </div>
+            </li>
             <li>
                 <div class="social-pc">
                     <div class="b-social" id="btn-social-pc">

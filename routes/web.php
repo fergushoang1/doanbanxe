@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +17,8 @@ use App\Http\Controllers\LoginController;
 |
 */
 
+Route::post('/search', [HomeController::class,'postSearch'])->name('search');
+Route::get('/search/{id}', [HomeController::class,'getSearch'])->name('search');
 
 
 
@@ -75,6 +78,10 @@ Route::get('/done', [PageController::class,'getDone'])->name('banxe.done');
 
 Route::get('/login', [LoginController::class,'getLogin']);
 Route::post('/login', [LoginController::class,'postLogin']);
+
+Route::get('/logout', [LoginController::class,'getLogout'])->name('logout');
+
+// ------------------------
 
 // --------------------
 

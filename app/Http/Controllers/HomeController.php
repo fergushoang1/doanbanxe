@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\prCar;
+use App\Models\ProductType;
+
+
 
 class HomeController extends Controller
 {
@@ -11,10 +15,11 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+    // phải Đăng nhập mới cho Action
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
 
     /**
      * Show the application dashboard.
@@ -25,4 +30,13 @@ class HomeController extends Controller
     {
         return view('home');
     }
+    
+    public function postSearch(Request $request){
+        $keywords = $request->keywords_submit;
+        $search= prCar::where('name','like','%'.$keywords.'%')->get();
+        $loai = ProductType::all();
+
+        return view('banxe.search',compact('search','loai'));
+    }
+
 }
