@@ -22,7 +22,7 @@
                                 <th>Thanh toán</th>
                                  <th>Chi tiết</th>                              
                                 <th>Delete</th>
-                                <th>Edit</th>
+                                
                             </tr>
                         </thead>
                         <tbody>
@@ -38,7 +38,7 @@
                                 <a href="{{route('banxe.billdetail',$b->id)}}"> Chi tiết</a></td>                      
                                 <td class="center"><i class="fa fa-trash-o  fa-fw"></i>
                                 <a href="{{route('delete',$b->id)}}"> Delete</a></td>
-                                <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="#">Edit</a></td>
+                                
                             </tr>
                             @endforeach
                         </tbody>

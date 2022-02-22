@@ -18,7 +18,7 @@ use App\Http\Controllers\HomeController;
 */
 
 Route::post('/search', [HomeController::class,'postSearch'])->name('search');
-Route::get('/search/{id}', [HomeController::class,'getSearch'])->name('search');
+Route::get('/search', [HomeController::class,'getSearch'])->name('search');
 
 
 

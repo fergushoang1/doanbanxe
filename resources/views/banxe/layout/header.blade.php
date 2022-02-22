@@ -46,9 +46,11 @@
                                         </div>
                                         <hr>
                                         @endforeach
+
                                         </div>
                                         <div class="cart-caption row">
-                                            <div class="cart-total col m-3"><b> Tổng tiền: </b>&nbsp <span class="cart-total-value">{{ $cart->totalPrice }} VND</span></div>
+                                            <div style="font-size: 16px;" class="cart-total col m-3"><b> Tổng tiền: </b>&nbsp <span style="font-size: 16px;" class="cart-total-value">
+                                                {{ number_format($cart->totalPrice)}}VND</span></div>
                                             <div class="center">
                                                 <label class="btn-oder" for="oder">
                                                     <a href="{{route('banxe.dathang')}}" id="oder" class="dathang">Đặt Hàng</a>

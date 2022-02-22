@@ -39,4 +39,11 @@ class HomeController extends Controller
         return view('banxe.search',compact('search','loai'));
     }
 
+    public function getSearch(){
+        $all = prCar::all();
+        $loai = ProductType::all();
+        return  view('banxe.all_product',compact('loai','all'));
+
+    }
+
 }

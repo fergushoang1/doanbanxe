@@ -21,8 +21,9 @@
             <div class="characteristics-image">
                 <img src="/image/{{$sanpham->image}}" alt="" width="510px" height="360px">
             </div>
-            <h3 class="d-block d-lg-none">{{$sanpham->name}}</h3>
-            <h4 class="d-block d-lg-none">{{$sanpham->unit_price}}</h4>
+            <h3 class="d-block d-lg-none">{{$sanpham->name}}</h3>  
+          
+            <h4 class="d-block d-lg-none"> {{ number_format($sanpham['unit_price']) }} </h4>
             <div class="characteristics-desc">
                 <h5>Đặc điểm</h5>
                 <p class="text-justify"></p>

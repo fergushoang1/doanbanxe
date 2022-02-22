@@ -106,7 +106,6 @@ class PageController extends Controller
                 $bill_detail->tenxe=$value['item']['name'];
                 $bill_detail->id_bill=$bills->id;
                 $bill_detail->id_product=$key;
-                $bill_detail->id_phukien=$key;
                 $bill_detail->quantity=$value['qty'];
                 $bill_detail->unit_price=$value['price']/$value['qty'];
                 $bill_detail->save();

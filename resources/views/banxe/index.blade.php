@@ -85,7 +85,7 @@
                         </div>
                         <p class="homepage-product-slide-tab-name">{{ $car -> name}}</p>
                         <p class="homepage-product-slide-tab-proce">
-                            Từ {{ $car -> unit_price}} VNĐ</p>
+                            Từ {{ number_format($car['unit_price']) }} VNĐ</p>
                         <a href="{{route('product_detail',$car->id)}}">
                             <p class="homepage-product-slide-tab-detail">Xem chi tiết</p>
                         </a>
