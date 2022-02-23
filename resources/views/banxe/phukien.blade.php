@@ -41,7 +41,10 @@
                 </div>
                 <div class="name-price-motor w-100">
                     <p class="homepage-product-slide-tab-name w-100">{{$type_product->name}}</p>
-                        <p class="homepage-product-slide-tab-price w-100 homepage-txt-price">Từ {{$type_product->unit_price}} VNĐ
+                        <p class="homepage-product-slide-tab-price w-100 homepage-txt-price">
+                            Từ {{ number_format($type_product->unit_price) }}VNĐ
+                          
+                            
                     </p>
                 </div>
                 <div class="row ">

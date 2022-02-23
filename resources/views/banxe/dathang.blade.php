@@ -45,8 +45,8 @@
                     
 				    </div>
                 <li class="list-group-item align-items-center mt-3 fs-3 d-flex justify-content-between" style="height: 55px;">
-                    <span>Tổng tiền (VND):</span>
-                    <strong>{{$totalPrice}}</strong>
+                    <span>Tổng tiền (VND):</span>                
+                    <strong>{{ number_format($totalPrice) }}</strong>
                 </li>
             </ul>
            

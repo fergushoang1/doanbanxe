@@ -32,7 +32,7 @@
                             <tr class="odd gradeX" align="center">
                                 <td>{{$pr->id}}</td>
                                 <td>{{$pr->name}}</td>
-                                <td>{{$pr->unit_price}}</td>
+                                <td>{{ number_format($pr->unit_price) }}</td>
                                 <td><img alt="{{$pr -> image}}" src="/image/{{ $pr -> image}}" height="200" width="200"></td>
                                 <td>{{$pr->id_type}}</td>
                                 <td class="center"><i class="fa fa-trash-o  fa-fw"></i>

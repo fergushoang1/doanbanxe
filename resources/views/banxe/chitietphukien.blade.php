@@ -30,7 +30,7 @@
         </div>
         <div class="col-12 col-lg-5 overview-right">
             <h3 class="d-none d-lg-block">{{$chitietpk->name}}</h3>
-            <h4 class="d-none d-lg-block">Giá bán: {{$chitietpk->unit_price}}</h4>
+            <h4 class="d-none d-lg-block">Giá bán: {{ number_format($chitietpk->unit_price) }}</h4>
 
             <div class="single-item-caption">
                  <form action="{{ route('banxe.addtocartpk',$chitietpk->id) }}">

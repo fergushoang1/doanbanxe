@@ -269,6 +269,11 @@ class PageController extends Controller
     public function getDone(){
         return view('banxe.done');
     }
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     
 
 

@@ -62,7 +62,7 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-cube fa-fw"></i> Product<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-indent" aria-hidden="true"></i> Product<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="{{route('banxe.prolist')}}">List Product</a>
@@ -75,7 +75,7 @@
                         </li>
                         
                         <li>
-                            <a href="#"><i class="fa fa-users fa-fw"></i> Bill<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-list-alt" aria-hidden="true"></i> Bill<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="{{route('banxe.bill')}}">Bill</a>

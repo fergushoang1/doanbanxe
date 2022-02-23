@@ -32,9 +32,10 @@
                             <tr class="odd gradeX" align="center">
                                 <td>{{$b->name}}</td>                  
                                 <td>{{$b->date_order}}</td>
-                                <td>{{$b->total}}</td>
+                                <td>{{ number_format($b->total) }}</td>
                                 <td>{{$b->payment}}</td>        
-                                <td class="center"><i class="fa fa-trash-o  fa-fw"></i>
+                                <td class="center">
+                                    <i class="fa fa-info-circle" aria-hidden="true"></i>
                                 <a href="{{route('banxe.billdetail',$b->id)}}"> Chi tiết</a></td>                      
                                 <td class="center"><i class="fa fa-trash-o  fa-fw"></i>
                                 <a href="{{route('delete',$b->id)}}"> Delete</a></td>

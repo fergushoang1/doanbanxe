@@ -31,7 +31,7 @@
         </div>
         <div class="col-12 col-lg-5 overview-right">
             <h3 class="d-none d-lg-block">{{$sanpham->name}}</h3>
-            <h4 class="d-none d-lg-block">Giá bán: {{$sanpham->unit_price}}</h4>
+            <h4 class="d-none d-lg-block">Giá bán: {{ number_format($sanpham['unit_price']) }}</h4>
 
             <div class="single-item-caption">
                  <form action="{{ route('banxe.addtocart',$sanpham->id) }}">
@@ -137,7 +137,7 @@
                 <div>
                     <span class="price-label d-block d-lg-inline">Giá bán lẻ đề xuất:</span>
                     <span class="price-value d-block d-lg-inline">
-                        {{$sanpham->unit_price}}
+                        {{ number_format($sanpham['unit_price']) }}
                     </span>
                 </div>
             </div>
