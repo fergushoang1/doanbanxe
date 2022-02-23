@@ -46,22 +46,22 @@ Route::group(['prefix'=>'admin'],function(){
             Route::get('danhsach',[CategoryController::class,'getCateList'])->name('admin.getCateList');
             Route::get('them',[CategoryController::class,'getCateAdd'])->name('admin.getCateAdd');
             Route::post('them',[CategoryController::class,'postCateAdd'])->name('admin.postCateAdd');
-            // Route::get('xoa/{id}',[CategoryController::class,'getCateDelete'])->name('admin.getCateDelete');
             Route::get('sua/{id}',[CategoryController::class,'getCateEdit'])->name('admin.getCateEdit');
             Route::post('sua/{id}',[CategoryController::class,'postCateEdit'])->name('admin.postCateEdit');
         });
  });
+// ----------------------------Admin---------------------------------------------
+Route::get('/product-add', [LoginController::class,'getProductadd'])->name('banxe.proadd');
 
-Route::get('/product-add', [PageController::class,'getProductadd'])->name('banxe.proadd');
+Route::post('/product-add', [LoginController::class,'postProductadd'])->name('banxe.proaddpost');
 
-Route::post('/product-add', [PageController::class,'postProductadd'])->name('banxe.proaddpost');
+Route::get('/product-edit/{id}', [LoginController::class,'getProductedit'])->name('banxe.proedit');
 
-Route::get('/product-edit/{id}', [PageController::class,'getProductedit'])->name('banxe.proedit');
+Route::post('/product-edit/{id}', [LoginController::class,'postProductedit'])->name('banxe.proeditpost');  
 
-Route::post('/product-edit/{id}', [PageController::class,'postProductedit'])->name('banxe.proeditpost');  
+Route::get('/product-list', [LoginController::class,'getProductlist'])->name('banxe.prolist');
 
-Route::get('/product-list', [PageController::class,'getProductlist'])->name('banxe.prolist');
-
+// -----------------------------------------------------------------------------------
 Route::get('/phukien', [PageController::class,'getPhukien'])->name('banxe.phukien');
 
 Route::get('/chitietphukien/{id}', [PageController::class,'getChitietphukien'])->name('banxe.chitietphukien');
@@ -70,9 +70,9 @@ Route::get('/customer', [PageController::class,'getCustomer'])->name('banxe.cust
 
 Route::get('/delete/{id}', [PageController::class,'getDelete'])->name('delete');
 
-Route::get('/bill', [PageController::class,'getBill'])->name('banxe.bill');
+Route::get('/bill', [LoginController::class,'getBill'])->name('banxe.bill');
 
-Route::get('/billdetail/{id}', [PageController::class,'getBilldetail'])->name('banxe.billdetail');
+Route::get('/billdetail/{id}', [LoginController::class,'getBilldetail'])->name('banxe.billdetail');
 
 Route::get('/done', [PageController::class,'getDone'])->name('banxe.done');
 

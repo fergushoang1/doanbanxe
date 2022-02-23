@@ -5,6 +5,12 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
 use Session;
+use App\Models\Bill;
+use App\Models\BillDetail;
+use App\Models\ProductType;
+use App\Models\prCar;
+
+
 
 
 class LoginController extends Controller
@@ -50,5 +56,95 @@ public function __construct() {
 public function getLogout() {
     Auth::logout();
     return redirect('login');
+}
+// Tesssssssssssssssssss-------
+public function getBill(){
+    $bill = Bill::all();
+   return view('banxe.admin.bill',compact('bill'));
+}
+
+public function getBilldetail($id){
+   $billd = Bill::where('id',$id)->first();
+   $bills = BillDetail::where('id_bill',$id)->get();
+   return view('banxe.admin.billdetail',compact('billd','bills'));
+}
+public function getProductadd(){
+    $loaisp = ProductType::all();
+   return view('banxe.admin.product-add',compact('loaisp'));
+}
+public function postProductadd(Request $product_request){
+          
+    if($product_request->has ('file')){
+     $file = $product_request->file; 
+     // lấy tên file
+      $file_name = $file->getclientoriginalName (); 
+      // upload
+      $file->move(base_path('public\image'),$file_name);              
+     }
+
+
+  $product = new prCar();
+  $product->name = $product_request->txtName;
+  $product->id_type = $product_request->option;
+  $product->description = $product_request->description;
+  $product->unit_price = $product_request->txtPrice;
+  $product->new = $product_request->txtnew;
+  $product->khoiluongbanthan = $product_request->khoiluongbanthan;
+  $product->dairongcao = $product_request->dairongcao;
+  $product->dungtichbinhxang = $product_request->dungtichbinhxang;
+  $product->loaidongco = $product_request->loaidongco;
+  $product->congsuattoida = $product_request->congsuattoida;
+  $product->muctieuthunhienlieu = $product_request->muctieuthunhienlieu;
+  $product->hethongkhoidong = $product_request->hethongkhoidong;
+  $product->image = $file_name;      
+  $product->save();
+
+  return redirect()->route('banxe.proadd')->withSuccess('Thêm mới thành công');
+
+}
+public function getProductedit($id){
+    $loaisp = ProductType::all();
+    $edit = prCar::find($id);
+     return view('banxe.admin.product-edit',compact('edit','loaisp'));
+ }
+ public function postProductedit(Request $product_request,$id){
+          
+    $product=prCar::find($id);
+       if($product_request->has ('file')){
+        $file = $product_request->file; 
+        // lấy tên file
+         $file_name = $file->getclientoriginalName (); 
+         // upload
+         $file->move(base_path('public\image'),$file_name);              
+        }
+        else{
+            $file_name = $product->image;
+        }
+
+
+
+   
+     $product = prCar::find($product_request->id);
+     $product->name = $product_request->txtName;
+     $product->id_type = $product_request->option;
+     $product->description = $product_request->description;
+     $product->unit_price = $product_request->txtPrice;
+     $product->new = $product_request->txtnew;
+     $product->khoiluongbanthan = $product_request->khoiluongbanthan;
+     $product->dairongcao = $product_request->dairongcao;
+     $product->dungtichbinhxang = $product_request->dungtichbinhxang;
+     $product->loaidongco = $product_request->loaidongco;
+     $product->congsuattoida = $product_request->congsuattoida;
+     $product->muctieuthunhienlieu = $product_request->muctieuthunhienlieu;
+     $product->hethongkhoidong = $product_request->hethongkhoidong;
+     $product->image = $file_name;
+        
+     $product->save();
+
+     return redirect()->route('banxe.prolist')->withSuccess('Sửa thành công');
+}
+public function getProductlist(){
+    $prlist = prCar::all();
+   return view('banxe.admin.product-list',compact('prlist'));
 }
 }

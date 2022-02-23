@@ -25,6 +25,10 @@
 
 <div id="page-wrapper">
     <div class="container-fluid">
+        <div class="row"> 
+            <div class="col"><h1> Tổng Doanh Thu Theo Năm </h1></div>
+        </div>
+        <hr>
         <div class="row">
             <img src="/image/download3.png" alt="img dashboad" width="100%" style="margin-top:30px">
             <hr>

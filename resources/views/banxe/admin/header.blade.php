@@ -1,7 +1,17 @@
-
+<style>
+    li a{
+       color: #000;
+    }
+    li a:hover{
+       color: #000;
+    }
+    li a:focus{
+       color: violet;
+    }
+</style>
 
 <!-- Navigation -->
-        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0;background-color: #ffffff">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="sr-only">Toggle navigation</span>
@@ -13,9 +23,9 @@
             </div>
             <!-- /.navbar-header -->
 
-            <ul class="nav navbar-top-links navbar-right">
+            <ul class="nav navbar-top-links navbar-right"  >
                 <!-- /.dropdown -->
-                <li class="dropdown">
+                <li class="dropdown" >
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
                     </a>
@@ -36,7 +46,7 @@
 
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
-                    <ul class="nav" id="side-menu">
+                    <ul class="nav" id="side-menu" >
                         <li class="sidebar-search">
                             <div class="input-group custom-search-form">
                                 <input type="text" class="form-control" placeholder="Search...">
@@ -49,8 +59,8 @@
                             <!-- /input-group -->
                         </li>
                         
-                        <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Category<span class="fa arrow"></span></a>
+                        <li >
+                            <a href="#" ><i class="fa fa-bar-chart-o fa-fw" ></i> Category<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="{{route('admin.getCateList')}}">List Category</a>

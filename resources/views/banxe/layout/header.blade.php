@@ -1,14 +1,14 @@
 <header>
     <div>
         
-        <ul>
+        <ul style="height: 55px;">
             <li class="w-25">
-                <div>
+                <div class="pt-2">
                     <form action="{{URL::To('/search')}}" method="POST">
                         {{csrf_field()}}
-                        <div class="timkiem input-group input-group-lg col-12" style="width: 400px">	
-                            <div class="col col-8 input">					
-                                <input type="text"  name="keywords_submit" id="keywords_submit" class="form-control" style="height: 40px; width: 250px" placeholder="Tìm Kiếm..."/>
+                        <div class="timkiem input-group input-group-lg col-12 " style="width: 400px">	
+                            <div class="col col-8 input ">					
+                                <input type="text"  name="keywords_submit" id="keywords_submit" class="form-control " style="height: 40px; width: 250px; font-size: 16px;" placeholder="Tìm Kiếm..."/>
                             </div>
                             
                         </div>
@@ -18,7 +18,7 @@
             <li>
                 <div class="social-pc">
                     <div class="b-social" id="btn-social-pc">
-                        <div class="btn-cart">
+                        <div class="btn-cart mt-2">
                             <div class="beta-select" >
                                 <i class="fa fa-shopping-cart me-2 ms-2"></i>
                                 <p class="d-inline ">Giỏ Hàng </p> (@if(Session::has('cart')){{ Session('cart')->totalQty }} 

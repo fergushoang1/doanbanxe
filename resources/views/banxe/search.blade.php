@@ -46,22 +46,22 @@
                 </div>
                 <div class="name-price-motor w-100">
                     <p class="homepage-product-slide-tab-name w-100">{{$all->name}}</p>
-                        <p class="homepage-product-slide-tab-price w-100 homepage-txt-price">Từ {{$all->unit_price}} VNĐ
+                        <p class="homepage-product-slide-tab-price w-100 homepage-txt-price">Từ  {{ number_format($all['unit_price']) }} VNĐ
                     </p>
                 </div>
-                <div class="row ">
-                    <div class=" homepage-product-slide-tab-detail justify-content-between d-flex " style="cursor: pointer; bottom: 150px; opacity: 0;">
+                <div class="row " >
+                    <div class=" homepage-product-slide-tab-detail justify-content-between d-flex ms-5" style="cursor: pointer; bottom: 150px; opacity: 0;">
                         <div class="col  align-self-center">
                             <a class="" href="{{route('product_detail',$all->id)}}">    
                                 Xem chi tiết
                             </a>
                         </div>
                         
-                        <div class="col col-5 px-0">
+                        <!-- <div class="col col-5 px-0">
                             <form action="{{ route('banxe.addtocart',$all->id) }}" >
                                 <input type="submit" class="type-add" value="ADD TO CART" />
                             </form>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="overlay-circle-hover"></div>
                 </div>

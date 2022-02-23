@@ -8,9 +8,9 @@
 </div> -->
 <div id="motor-detail" class="container">
     <div class="row d-none d-lg-block motor-breadscrumb">
-        <a class="breadscrumb-parent" href="/">Trang chủ</a>
+        <a class="breadscrumb-parent" href="{{Route('banxe.index')}}">Trang chủ</a>
         <span class="breadscrumb-arrow">❯</span>
-        <a class="breadscrumb-parent" href="/">Xe máy</a>
+        <a class="breadscrumb-parent" href="#">Xe máy</a>
         <span class="breadscrumb-arrow">❯</span>
         <a class="breadscrumb-parent" href="{{route('banxe.all_product')}}">Sản phẩm</a>
         <span class="breadscrumb-arrow">❯</span>
@@ -26,16 +26,16 @@
             <h4 class="d-block d-lg-none"> {{ number_format($sanpham['unit_price']) }} </h4>
             <div class="characteristics-desc">
                 <h5>Đặc điểm</h5>
-                <p class="text-justify"></p>
+                <!-- <p class="text-justify"></p> -->
             </div>
         </div>
         <div class="col-12 col-lg-5 overview-right">
-            <h3 class="d-none d-lg-block">{{$sanpham->name}}</h3>
-            <h4 class="d-none d-lg-block">Giá bán: {{ number_format($sanpham['unit_price']) }}</h4>
+            <h3 class="d-none d-lg-block my-5">{{$sanpham->name}}</h3>
+            <h4 class="d-none d-lg-block my-3">Giá bán: {{ number_format($sanpham['unit_price']) }} VND</h4>
 
             <div class="single-item-caption">
                  <form action="{{ route('banxe.addtocart',$sanpham->id) }}">
-                 <input type="submit" class="btn-danger my-2" style="width:300px; height: 40px; border-radius: 5px" value="ADD TO CART" />
+                 <input type="submit" class="btn-danger my-2" style="width:300px; height: 40px; border-radius: 5px;background-color: #cc0000" value="ADD TO CART" />
                  </form>
             </div>
 
@@ -43,18 +43,21 @@
                 <div class="accordion" id="accordion-overview">
                     <div class="accordion-item">
                         <a class="d-flex justify-content-between align-items-center accordion-header" id="heading-design" data-toggle="collapse" data-target="#collapse-design" aria-expanded="true" aria-controls="collapse-design">
-                            <span class="align-middle">THIẾT KẾ</span>
+                            <span class="align-middle">NGOẠI HÌNH</span>
                             <i class="fa fa-minus"></i>
                         </a>
                         <div id="collapse-design" class="collapse accordion-body show" aria-labelledby="heading-design" data-parent="#accordion-overview">
                             <div class="row ">
-                                <div class="col-6 col-lg-4 spec_item design_item" style="width: auto; height: auto">
-                                    <img src="/image/{{$sanpham->image}}" alt="" >
-                                    <p>Thiết kế cổ điển, thanh lịch</p>
+                                <div class="col-6 col-lg-4 spec_item design_item mx-3" style=" width: auto; height: auto">
+                                <h5>Khối lượng bản thân</h5>
+                                <hr>
+                                <p>{{$sanpham->khoiluongbanthan}}</p>
+                                    
                                 </div>
-                                <div class="col-6 col-lg-4 spec_item design_item" style="width: auto; height: auto">
-                                    <img src="/image/{{$sanpham->image}}" alt="">
-                                    <p>Tư thế lái xe thoải mái</p>
+                                <div class="col-6 col-lg-4 spec_item design_item mx-3" style="width: auto; height: auto">
+                                    <h5>Dài x Rộng x Cao</h5>
+                                    <hr>
+                                    <p>{{$sanpham->dairongcao}}</p>
                                 </div>
                             </div>
                         </div>
@@ -62,45 +65,52 @@
 
                     <div class="accordion-item">
                         <a class="d-flex justify-content-between align-items-center accordion-header" id="heading-tech" data-toggle="collapse" data-target="#collapse-tech" aria-expanded="false" aria-controls="collapse-tech">
-                            <span>ĐỘNG CƠ - CÔNG NGHỆ</span>
+                            <span>ĐỘNG CƠ - BÌNH XĂNG</span>
                             <i class="fa fa-plus"></i>
                         </a>
 
                         <div id="collapse-tech" class="collapse accordion-body" aria-labelledby="heading-tech" data-parent="#accordion-overview">
-                            <div class="row">
-                                <div class="col-6 col-lg-4 spec_item  tech_item" style="width: auto; height: auto">
-                                    <img class="w-100" src="/image/{{ $sanpham -> image}}" alt="">
-                                    <p>Động cơ nâng cấp bền bỉ</p>
+                        <div class="row ">
+                                <div class="col-6 col-lg-4 spec_item design_item " style=" width: auto; height: auto">
+                                <h5>Loại động cơ</h5>
+                                <hr>
+                                <p>{{$sanpham->loaidongco}}</p>
+                                    
                                 </div>
-                             </div>
-                        </div>
+                                <div class="col-6 col-lg-4 spec_item design_item " style="width: auto; height: auto">
+                                    <h5>Dung tích bình xăng</h5>
+                                    <hr>
+                                    <p>{{$sanpham->dungtichbinhxang}}</p>
+                                </div>
+                            </div>
                     </div>
 
                     <div class="accordion-item">
                         <a class="d-flex justify-content-between align-items-center accordion-header" id="heading-utility" data-toggle="collapse" data-target="#collapse-utility" aria-expanded="false" aria-controls="collapse-utility">
-                            <span>TIỆN ÍCH & AN TOÀN</span>
+                            <span>KHÁC</span>
                             <i class="fa fa-plus"></i>
+                            
                         </a>
 
                         <div id="collapse-utility" class="collapse accordion-body" aria-labelledby="heading-utility" data-parent="#accordion-overview">
-                            <div class="row ">
-                                <div class="col-6 col-lg-4 spec_item utility_item" style="width: auto; height: auto">
-                                    <img class="w-100" src="{{URL::To('storage/'.$sanpham -> image)}}" alt="">
-                                    <p>Hệ thống khóa thông minh</p>
+                        <div class="row ">
+                                <div class="col-6 col-lg-4 spec_item design_item " style=" width: auto; height: auto">
+                                <h5>Hệ thống khởi động</h5>
+                                <hr>
+                                <p>{{$sanpham->hethongkhoidong}}</p>
+                                    
                                 </div>
-                                <div class="col-6 col-lg-4 spec_item utility_item" style="width: auto; height: auto">
-                                    <img class="w-100" src="{{URL::To('storage/'.$sanpham -> image)}}" alt="">
-                                    <p>Trang bị đèn LED toàn bộ</p>
+                                <div class="col-6 col-lg-4 spec_item design_item " style="width: auto; height: auto">
+                                    <h5>Mức tiêu thụ nhiên liệu</h5>
+                                    <hr>
+                                    <p>{{$sanpham->muctieuthunhienlieu}}</p>
                                 </div>
-                                <div class="col-6 col-lg-4 spec_item utility_item" style="width: 200px; height: auto">
-                                    <img class="w-100" src="{{URL::To('storage/'.$sanpham -> image)}}" alt="">
-                                    <p>Mặt đồng hồ hiện đại và phanh đĩa thủy lực phía trước</p>
+                                <div class="col-6 col-lg-4 spec_item design_item " style="width: auto; height: auto">
+                                    <h5>Công suất tối đa</h5>
+                                    <hr>
+                                    <p>{{$sanpham->congsuattoida}}</p>
                                 </div>
-                                <div class="col-6 col-lg-4 spec_item utility_item" style="width: auto; height: auto">
-                                    <img class="w-100" src="{{URL::To('storage/'.$sanpham -> image)}}" alt="">
-                                    <p>Trang bị yên sau mới</p>
-                                </div>
-                                </div>
+                        </div>
                         </div>
                     </div>
                 </div>
@@ -132,92 +142,17 @@
         </div>
 
                 <div class="col-12 col-lg-6 price-inner show">
-            <img src="{{URL::To('storage/'.$sanpham -> image)}}" alt="">
+            <img src="/image/{{$sanpham->image}}" alt="">
             <div class="price-item">
                 <div>
                     <span class="price-label d-block d-lg-inline">Giá bán lẻ đề xuất:</span>
                     <span class="price-value d-block d-lg-inline">
-                        {{ number_format($sanpham['unit_price']) }}
+                        {{ number_format($sanpham['unit_price']) }} VND
                     </span>
                 </div>
             </div>
         </div>
-                <div class="col-12 col-lg-6 price-inner ">
-            <img src="https://cdn.honda.com.vn/motorbike-versions/October2021/nrsqcdiLirob142y4Qbf.png" alt="">
-            <div class="price-item">
-                <div>
-                    <span class="price-label d-block d-lg-inline">Giá bán lẻ đề xuất:</span>
-                    <span class="price-value d-block d-lg-inline">
-                        86.990.000 VNĐ
-                    </span>
-                </div>
-            </div>
-        </div>
-                <div class="col-12 col-lg-6 price-inner ">
-            <img src="https://cdn.honda.com.vn/motorbike-versions/October2021/RFDFIO2vttcPv6q6jCfq.png" alt="">
-            <div class="price-item">
-                <div>
-                    <span class="price-label d-block d-lg-inline">Giá bán lẻ đề xuất:</span>
-                    <span class="price-value d-block d-lg-inline">
-                        86.990.000 VNĐ
-                    </span>
-                </div>
-            </div>
-        </div>
-                <div class="col-12 col-lg-6 price-inner ">
-            <img src="https://cdn.honda.com.vn/motorbike-versions/October2021/rekvNMjwCvz3tiYHy27g.png" alt="">
-            <div class="price-item">
-                <div>
-                    <span class="price-label d-block d-lg-inline">Giá bán lẻ đề xuất:</span>
-                    <span class="price-value d-block d-lg-inline">
-                        86.990.000 VNĐ
-                    </span>
-                </div>
-            </div>
-        </div>
-                <div class="col-lg-6 color-inner">
-                                                 <div>                                                 <div class="color-group">Phiên bản đặc biệt</div>
                 
-
-                <div class="color-value">
-                                        <div class="color-item active">
-                        <div class="color-cell" style="background-color: #000000; width: 100%;"></div>
-                                            </div>
-                    <div class="color-label">Đen</div>
-                </div>
-                                                </div>
-        <div>                                                            <div class="color-group">Phiên bản tiêu chuẩn</div>
-                
-
-                <div class="color-value">
-                                        <div class="color-item ">
-                        <div class="color-cell" style="background-color: #73acba; width: 50%;"></div>
-                                                                        <div class="color-cell" style="background-color: #ffffff; width: 50%;"></div>
-                                                                    </div>
-                    <div class="color-label">Xanh Trắng</div>
-                </div>
-                                                                    
-
-                <div class="color-value">
-                                        <div class="color-item ">
-                        <div class="color-cell" style="background-color: #044081; width: 50%;"></div>
-                                                                        <div class="color-cell" style="background-color: #ffffff; width: 50%;"></div>
-                                                                    </div>
-                    <div class="color-label">Xanh Trắng</div>
-                </div>
-                                                                    
-
-                <div class="color-value">
-                                        <div class="color-item ">
-                        <div class="color-cell" style="background-color: #ec1313; width: 50%;"></div>
-                                                                        <div class="color-cell" style="background-color: #faf5f5; width: 50%;"></div>
-                                                                    </div>
-                    <div class="color-label">Đỏ Trắng</div>
-                </div>
-                            </div>
-                                </div>
-    </div>
-
     <div class="row title">Thông số kĩ thuật</div>
     <div class="row justify-content-center detail-item specification">
         <div class="col-12 spec-inner">

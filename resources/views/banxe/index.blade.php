@@ -5,7 +5,7 @@
 @section('container')
 
 <div class="banner_custom">
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="height:fit-content;">
         <ol class="carousel-indicators" data-quantity-indicator="5">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="1" class=""></li>
@@ -21,15 +21,15 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
         </a>
-        <div class="carousel-inner">
+        <div class="carousel-inner" >
             <div class="carousel-item active">
-                <img class="d-block" src="https://cdn.honda.com.vn/home-banner/December2021/aZHFfv8jYFkksrgmQlU6.jpg" alt="0 slide" />
+                <img class="d-block" src="https://cdn.honda.com.vn/home-banner/December2021/qE97uq0sZA5LKNKiu6q5.jpg" alt="0 slide" />
             </div>
             <div class="carousel-item ">
                 <img class="d-block" src="https://cdn.honda.com.vn/home-banner/December2021/cZ0Eiop2bpixULANUs2l.jpg" alt="1 slide" />
             </div>
             <div class="carousel-item ">
-                <img class="d-block" src="https://cdn.honda.com.vn/home-banner/December2021/PBGpomChKxO7GV7PUjKM.png" alt="2 slide" />
+                <img class="d-block" src="https://cdn.honda.com.vn/home-banner/December2021/aZHFfv8jYFkksrgmQlU6.jpg" alt="2 slide" />
             </div>
             <div class="carousel-item ">
                 <img class="d-block" src="https://cdn.honda.com.vn/home-banner/October2021/SONQgyHWammhJY0YDpi4.jpg" alt="3 slide" />
