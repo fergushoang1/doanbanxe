@@ -147,4 +147,10 @@ public function getProductlist(){
     $prlist = prCar::all();
    return view('banxe.admin.product-list',compact('prlist'));
 }
+
+public function getDeletebill($id){
+     $dlt = Bill::find($id);
+         $dlt->delete();
+        return redirect()->route('banxe.bill')->withSuccess('Xoá thành công');
+}
 }

@@ -38,7 +38,7 @@
                                     <i class="fa fa-info-circle" aria-hidden="true"></i>
                                 <a href="{{route('banxe.billdetail',$b->id)}}"> Chi tiết</a></td>                      
                                 <td class="center"><i class="fa fa-trash-o  fa-fw"></i>
-                                <a href="{{route('delete',$b->id)}}"> Delete</a></td>
+                                <a href="{{route('deleteb',$b->id)}}"> Delete</a></td>
                                 
                             </tr>
                             @endforeach

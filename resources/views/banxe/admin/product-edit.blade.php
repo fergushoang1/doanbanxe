@@ -41,7 +41,7 @@
                             <div class="form-group">
                                 <label>Price</label>
                                 <input class="form-control" 
-                                value="{{ number_format($edit->unit_price) }}" name="txtPrice" placeholder="Please Enter price" required=""/>
+                                value="{{ $edit->unit_price }} " name="txtPrice" placeholder="Please Enter price" required=""/>
                             </div>                                                    
                             <div class="form-group">
                                 <label>Images</label>

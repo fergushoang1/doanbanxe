@@ -70,6 +70,8 @@ Route::get('/customer', [PageController::class,'getCustomer'])->name('banxe.cust
 
 Route::get('/delete/{id}', [PageController::class,'getDelete'])->name('delete');
 
+Route::get('/deleteb/{id}', [LoginController::class,'getDeletebill'])->name('deleteb');
+
 Route::get('/bill', [LoginController::class,'getBill'])->name('banxe.bill');
 
 Route::get('/billdetail/{id}', [LoginController::class,'getBilldetail'])->name('banxe.billdetail');
