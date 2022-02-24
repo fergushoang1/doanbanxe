@@ -87,6 +87,7 @@ class PageController extends Controller
                 $bills->gender=$req->gender;
                 $bills->address=$req->address;
                 $bills->phone=$req->phone;
+                $bills->xacnhan='Chưa xác nhận';
 
         foreach($cart->items as $key=>$value){
             }

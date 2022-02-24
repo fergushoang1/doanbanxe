@@ -3,13 +3,26 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Support\Facades\Auth;
-use Session;
+
+
 use App\Models\Bill;
 use App\Models\BillDetail;
 use App\Models\ProductType;
 use App\Models\prCar;
 
+
+use App\Models\Slide;
+use App\Models\Product;
+
+use App\Models\Customer;
+use App\Models\Phukien;
+use App\Models\Cart;
+use App\Models\User;
+
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\View;
 
 
 
@@ -68,6 +81,19 @@ public function getBilldetail($id){
    $bills = BillDetail::where('id_bill',$id)->get();
    return view('banxe.admin.billdetail',compact('billd','bills'));
 }
+
+public function postBilldetail(Request $product_request,$id){
+  
+    
+     $product = Bill::find($product_request->id);
+     
+     $product->xacnhan= $product_request->option;
+             
+     $product->save();
+
+     return redirect()->route('banxe.bill')->withSuccess('Thành công');
+}
+
 public function getProductadd(){
     $loaisp = ProductType::all();
    return view('banxe.admin.product-add',compact('loaisp'));
@@ -143,6 +169,13 @@ public function getProductedit($id){
 
      return redirect()->route('banxe.prolist')->withSuccess('Sửa thành công');
 }
+
+
+
+
+
+
+
 public function getProductlist(){
     $prlist = prCar::all();
    return view('banxe.admin.product-list',compact('prlist'));

@@ -20,7 +20,8 @@
                                 <th>Ngày order</th>
                                 <th>Tổng tiền</th>
                                 <th>Thanh toán</th>
-                                 <th>Chi tiết</th>                              
+                                <th>Chi tiết</th> 
+                                <th>Xác nhận</th> 
                                 <th>Delete</th>
                                 
                             </tr>
@@ -36,9 +37,13 @@
                                 <td>{{$b->payment}}</td>        
                                 <td class="center">
                                     <i class="fa fa-info-circle" aria-hidden="true"></i>
-                                <a href="{{route('banxe.billdetail',$b->id)}}"> Chi tiết</a></td>                      
-                                <td class="center"><i class="fa fa-trash-o  fa-fw"></i>
-                                <a href="{{route('deleteb',$b->id)}}"> Delete</a></td>
+                                    <a href="{{route('banxe.billdetail',$b->id)}}"> Chi tiết</a>
+                                </td>                                    
+                                <td>{{$b->xacnhan}}</td>          
+                                <td class="center">
+                                    <i class="fa fa-trash-o  fa-fw"></i>
+                                    <a href="{{route('deleteb',$b->id)}}"> Delete</a>
+                                </td>
                                 
                             </tr>
                             @endforeach

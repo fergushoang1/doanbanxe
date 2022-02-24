@@ -59,6 +59,8 @@ Route::get('/product-edit/{id}', [LoginController::class,'getProductedit'])->nam
 
 Route::post('/product-edit/{id}', [LoginController::class,'postProductedit'])->name('banxe.proeditpost');  
 
+
+
 Route::get('/product-list', [LoginController::class,'getProductlist'])->name('banxe.prolist');
 
 // -----------------------------------------------------------------------------------
@@ -75,6 +77,9 @@ Route::get('/deleteb/{id}', [LoginController::class,'getDeletebill'])->name('del
 Route::get('/bill', [LoginController::class,'getBill'])->name('banxe.bill');
 
 Route::get('/billdetail/{id}', [LoginController::class,'getBilldetail'])->name('banxe.billdetail');
+
+Route::post('/billdetail/{id}', [LoginController::class,'postBilldetail'])->name('banxe.billdetailpost');  
+
 
 Route::get('/done', [PageController::class,'getDone'])->name('banxe.done');
 

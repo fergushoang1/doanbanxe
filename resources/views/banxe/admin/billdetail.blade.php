@@ -349,10 +349,27 @@ tr:hover .cut {
   <link rel="stylesheet" href="style.css">
   <link rel="license" href="https://www.opensource.org/licenses/mit-license/">
   <script src="script.js"></script>
+
+
   
 </head>
 
 <body>
+<form action="" method="POST" class="needs-validation" enctype="multipart/form-data">
+                            @csrf
+  <select name="option" class="form-control">
+          <option value="Đã xác nhận" >Đã xác nhận</option>
+          
+          <option  value="Chưa xác nhận" <?php if ($billd['xacnhan']=='Chưa xác nhận'):?>
+                            selected="selected" 
+                            <?php endif ?> >
+                                        Chưa xác nhận</option>
+           
+</select>
+<button type="submit" class="btn btn-default">Update</button>
+</form>
+
+  <a onclick="history.back()"><img src="/image/back.png" alt="" style="width: auto; height: 40px;"></a>
   <header>
     <h1>Chi tiết đơn hàng</h1>
     <a href="{{Route('banxe.bill') }} ">
@@ -415,7 +432,7 @@ tr:hover .cut {
           
           <td><span contenteditable>{{ $bills ->quantity}}</span></td>
           
-          <td><span data-prefix>{{ $bills ->unit_price}}</span><span>VNĐ</span></td>
+          <td><span data-prefix>{{ number_format($bills['unit_price']) }}</span><span>VNĐ</span></td>
         </tr>
         
       @endforeach
@@ -426,7 +443,7 @@ tr:hover .cut {
     
       <tr>
         <th><span contenteditable>Tổng cộng</span></th>
-        <td><span>{{ $billd ->total}}</span><span>VNĐ</span></td>
+        <td><span>{{ number_format($billd['total']) }}</span><span>VNĐ</span></td>
       </tr>     
     </table>
   </article>

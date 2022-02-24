@@ -416,7 +416,7 @@ tr:hover .cut {
           
           <td><span contenteditable>{{ $item['quantity'] }}</span></td>
           
-          <td><span data-prefix>{{ $item['unit_price'] }}</span><span>VNĐ</span></td>
+          <td><span data-prefix>{{ number_format($item['unit_price']) }}</span><span>VNĐ</span></td>
         </tr>
       @endforeach
       
@@ -426,7 +426,7 @@ tr:hover .cut {
     
       <tr>
         <th><span contenteditable>Tổng cộng</span></th>
-        <td><span>{{ $data['bills']['total'] }}</span><span>VNĐ</span></td>
+        <td><span>{{ number_format($data['bills']['total']) }}</span><span>VNĐ</span></td>
       </tr>     
     </table>
   </article>

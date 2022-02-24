@@ -19,7 +19,10 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{{route('home')}}">Admin</a>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="{{route('home')}}">
+                <img  href="{{route('home')}}" src="/image/xe1.png" alt="" style="width: 70px; height: 60px;"></a>
+               <!--  <a class="navbar-brand" href="{{route('home')}}">Admin</a> -->
             </div>
             <!-- /.navbar-header -->
 

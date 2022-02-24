@@ -85,7 +85,7 @@
                             </div>
                             <button type="submit" class="btn btn-default">Product Add</button>
                             <button type="reset" class="btn btn-default">Reset</button>
-                        <form>
+                        </form>
                     </div>
                 </div>
                 <!-- /.row -->
