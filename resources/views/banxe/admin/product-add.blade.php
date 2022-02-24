@@ -22,8 +22,8 @@
                             @csrf
                             <div class="form-group">
                                 <label>Chọn loại xe</label>
-                                <select name="option" class="form-control" >
-                                    <option>--- Chọn loại xe ---</option>
+                                <select name="option" class="form-control" required="">
+                                    {{-- <option required="">--- Chọn loại xe ---</option> --}}
                                     @foreach($loaisp as $loai)
                                 <option  value="{{$loai->id}}">{{$loai->name}}</option>
                                     @endforeach
@@ -83,8 +83,9 @@
                                 <label>Hệ thống khởi động</label>
                                 <input class="form-control" name="hethongkhoidong" placeholder="" required=""/>
                             </div>
-                            <button type="submit" class="btn btn-default">Product Add</button>
-                            <button type="reset" class="btn btn-default">Reset</button>
+                            <button type="submit" class="btn btn-primary">Product Add</button>
+                            <button type="reset" class="btn btn-warning">Reset</button>
+                            <button type="reset" onclick="history.back()" class="btn btn-default">Cancel</button>
                         </form>
                     </div>
                 </div>

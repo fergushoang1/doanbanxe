@@ -35,8 +35,8 @@
                                 <td>{{ number_format($pr->unit_price) }}</td>
                                 <td><img alt="{{$pr -> image}}" src="/image/{{ $pr -> image}}" height="200" width="200"></td>
                                 <td>{{$pr->id_type}}</td>
-                                <td class="center"><i class="fa fa-trash-o  fa-fw"></i>
-                                    <a href="{{route('delete',$pr->id)}}"> Delete</a></td>
+                                <td class="center"><i style="color: red" class="fa fa-trash-o  fa-fw"></i>
+                                    <a style="color: red" href="{{route('delete',$pr->id)}}" onclick="return confirm('bạn có chắc muốn XOÁ sản phẩm này không??')"> Delete</a></td>
                                 <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="{{route('banxe.proedit',$pr->id)}}">Edit</a></td>
                             </tr>
                             @endforeach

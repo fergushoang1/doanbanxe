@@ -21,9 +21,8 @@
                                 <th>Tổng tiền</th>
                                 <th>Thanh toán</th>
                                 <th>Chi tiết</th> 
-                                <th>Xác nhận</th> 
+                                <th>Tình Trạng</th> 
                                 <th>Delete</th>
-                                
                             </tr>
                         </thead>
                         <tbody>
@@ -41,8 +40,9 @@
                                 </td>                                    
                                 <td>{{$b->xacnhan}}</td>          
                                 <td class="center">
-                                    <i class="fa fa-trash-o  fa-fw"></i>
-                                    <a href="{{route('deleteb',$b->id)}}"> Delete</a>
+                                    <i style="color: red" class="fa fa-trash-o  fa-fw"></i>
+                                    <a style="color: red" href="{{route('deleteb',$b->id)}}" onclick="return confirm('bạn có chắc chắn muốn XOÁ bill này không??')"> Delete</a>
+                                    
                                 </td>
                                 
                             </tr>

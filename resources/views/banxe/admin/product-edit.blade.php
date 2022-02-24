@@ -93,8 +93,8 @@
 
 
                              <hr class="mb-4">
-                            <button type="submit" class="btn btn-default">Update</button>
-                            <button type="reset" class="btn btn-default">Reset</button>
+                            <button type="submit" onclick="return confirm('bạn có muốn UPDATE chắc không??')" class="btn btn-primary">Update</button>
+                            <button type="reset" onclick="history.back()" class="btn btn-default">Cancel</button>
                         <form>
                     </div>
                 </div>

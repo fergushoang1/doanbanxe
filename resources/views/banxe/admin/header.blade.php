@@ -3,15 +3,15 @@
        color: #000;
     }
     li a:hover{
-       color: #000;
+       color: rgb(128, 52, 52);
     }
     li a:focus{
-       color: violet;
+       color: rgb(159, 114, 0);
     }
 </style>
 
 <!-- Navigation -->
-        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0;background-color: #ffffff">
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0;background-color: #ffffff; ">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="sr-only">Toggle navigation</span>
@@ -47,7 +47,7 @@
             </ul>
             <!-- /.navbar-top-links -->
 
-            <div class="navbar-default sidebar" role="navigation">
+            <div class="navbar-default sidebar" style="margin-top: 70px" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu" >
                         <li class="sidebar-search">
@@ -93,9 +93,7 @@
                                 <li>
                                     <a href="{{route('banxe.bill')}}">Bill</a>
                                 </li>
-                                <li>
-                                    <a href="{{route('banxe.customer')}}">Thông tin khách hàng</a>
-                                </li>
+                                
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
@@ -103,11 +101,9 @@
                             <a href="#"><i class="fa fa-users fa-fw"></i> User<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="#">List User</a>
+                                    <a href="{{Route('banxe.customer')}}">Information User</a>
                                 </li>
-                                <li>
-                                    <a href="#">Add User</a>
-                                </li>
+                                
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>

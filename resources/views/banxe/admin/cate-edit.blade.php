@@ -40,8 +40,8 @@
                                 <input  type="file" name="file">
                                 <img alt="{{$edit -> image}}" src="/imagetype/{{ $edit -> image}}" height="200" width="200">
                             </div>
-                            <button type="submit" class="btn btn-default">Thêm</button>
-                            <button type="reset" class="btn btn-default">Reset</button>
+                            <button type="submit" onclick="return confirm('bạn có chắc không??')" class="btn btn-primary">Update</button>
+                            <button type="reset" onclick="history.back()" class="btn btn-default">Cancel</button>
                         <form>
                     </div>
                 </div>

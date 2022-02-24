@@ -356,20 +356,28 @@ tr:hover .cut {
 
 <body>
 <form action="" method="POST" class="needs-validation" enctype="multipart/form-data">
-                            @csrf
-  <select name="option" class="form-control">
-          <option value="Đã xác nhận" >Đã xác nhận</option>
-          
-          <option  value="Chưa xác nhận" <?php if ($billd['xacnhan']=='Chưa xác nhận'):?>
-                            selected="selected" 
-                            <?php endif ?> >
-                                        Chưa xác nhận</option>
-           
-</select>
-<button type="submit" class="btn btn-default">Update</button>
+  @csrf
+  <div style="margin-bottom: 2%">
+   
+      <a onclick="history.back()"><img src="/image/back.png" alt="" style="width: auto; height: 40px;"></a>
+      <div style="display: inline-block; margin-left:40%"> 
+      <label for="optionn" style="line-height:33px" >Tình Trạng:</label>
+    <select name="option" id="optionn" class="form-control" style="width: 200px;padding:5px; border:1px solid #000; border-radius:3px; ">
+      <option  value="Đã xác nhận" >Đã xác nhận</option>
+        <option  value="Chưa xác nhận" 
+          <?php if ($billd['xacnhan']=='Chưa xác nhận'):?>
+          selected="selected" 
+          <?php endif ?> > Chưa xác nhận 
+        </option>
+    </select>
+  </div>
+
+    
+      <button onclick="return confirm('bạn có chắc muốn Update không??')" style="padding:8px;color: rgb(255, 255, 255);background-color:rgb(0, 152, 23); border-radius:3px">Update</button>
+    
+  </div>
 </form>
 
-  <a onclick="history.back()"><img src="/image/back.png" alt="" style="width: auto; height: 40px;"></a>
   <header>
     <h1>Chi tiết đơn hàng</h1>
     <a href="{{Route('banxe.bill') }} ">

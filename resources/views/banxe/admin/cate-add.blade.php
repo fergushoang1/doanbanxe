@@ -39,8 +39,8 @@
                                 <label>Hình ảnh minh họa</label>
                                 <input required="" type="file"  name="file">
                             </div>
-                            <button type="submit" class="btn btn-default">Thêm</button>
-                            <button type="reset" class="btn btn-default">Reset</button>
+                            <button type="submit" class="btn btn-primary">Thêm</button>
+                            <button type="reset" class="btn btn-warning">Reset</button>
                         <form>
                     </div>
                 </div>
