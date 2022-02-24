@@ -13,11 +13,10 @@
                        
                         <thead>
                             <tr align="center">
-                                
                                 <th>Tên</th>
                                 <th>Mô Tả</th>
                                 <th>Ảnh minh hoạ</th>
-                                <th>Delete</th>
+                                <!-- <th>Delete</th> -->
                                 <th>Edit</th>
                                 
                             </tr>
@@ -35,7 +34,7 @@
                                 <td>{{ $all -> description }}</td>
                                 <td><img alt="{{$all -> image}}" src="/imagetype/{{ $all -> image}}" height="200" width="200">
                                 </td>
-                                <td  class="center"><i class="fa fa-trash-o fa-fw" style="color: red"></i><a style="color: red"  onclick="return confirm('bạn có chắc Xoá không??')" href="{{route('delete',$all->id)}}"> Delete</a></td>
+                                <!-- <td  class="center"><i class="fa fa-trash-o fa-fw" style="color: red"></i><a style="color: red"  onclick="return confirm('bạn có chắc Xoá không??')" href="{{route('delete',$all->id)}}"> Delete</a></td> -->
                                 <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="{{route('admin.postCateEdit',$all->id)}}">Edit</a></td>
                             </tr>
                             @endforeach
